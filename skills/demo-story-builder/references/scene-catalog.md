@@ -6,6 +6,11 @@
 - `stat-grid`: Two to four related metrics after introducing them individually.
 - `reframe`: Explicit before → after mental-model change.
 - `architecture`: Three to six nodes explaining the mechanism.
+- `architecture-flow`: A causal request or data path with labeled transitions.
+- `architecture-layers`: Responsibilities grouped by platform or abstraction layer.
+- `architecture-compare`: Current and proposed structures side by side.
+- `trust-boundary`: Security, ownership, network, or governance zones.
+- `deployment-topology`: Workloads placed across clusters, sites, or hardware pools.
 - `pipeline`: Ordered causal or technical sequence.
 - `live-proof`: Typed adapter, bounded timeout, visible source state, retry, and rehearsal fixture.
 - `comparison`: Side-by-side benchmark or state comparison.

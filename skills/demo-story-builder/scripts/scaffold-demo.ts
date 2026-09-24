@@ -51,5 +51,10 @@ const config = (await readFile(configPath, 'utf8'))
   .replace("subtitle: 'A reusable Red Hat × Intel live-demo story'", `subtitle: ${JSON.stringify(subtitle)}`)
 await writeFile(configPath, config)
 
+const briefPath = join(destination, 'story.brief.yaml')
+const brief = (await readFile(briefPath, 'utf8'))
+  .replace('title: Build the proof, not just the pitch', `title: ${JSON.stringify(title)}`)
+await writeFile(briefPath, brief)
+
 console.log(`Created ${name} at ${destination}`)
-console.log('Next: npm install && npm run check')
+console.log('Next: complete story.brief.yaml, then npm install && npm run check')

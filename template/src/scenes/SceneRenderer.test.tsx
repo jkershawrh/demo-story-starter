@@ -45,4 +45,34 @@ describe('SceneRenderer', () => {
     render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
     expect(screen.getByText('Custom proof scene')).toBeInTheDocument()
   })
+
+  const architectureScenes: SceneConfig[] = [
+    {
+      id: 'coverage-flow', type: 'architecture-flow', beat: 'system-reveal', title: 'Request flow',
+      steps: [{ id: 'entry', label: 'Entry', transition: 'route' }, { id: 'model', label: 'Model' }],
+    },
+    {
+      id: 'coverage-layers', type: 'architecture-layers', beat: 'system-reveal', title: 'Layers',
+      layers: [{ id: 'platform', label: 'Platform', responsibility: 'Schedules the workload' }],
+    },
+    {
+      id: 'coverage-compare', type: 'architecture-compare', beat: 'reframe', title: 'Structural change',
+      before: { label: 'Before', nodes: ['Fixed path'] }, after: { label: 'After', nodes: ['Measured route'] }, insight: 'Measure before routing.',
+    },
+    {
+      id: 'coverage-boundary', type: 'trust-boundary', beat: 'system-reveal', title: 'Trust boundaries',
+      zones: [{ id: 'trusted', label: 'Trusted zone', boundary: 'Policy boundary', items: ['Private data'] }],
+    },
+    {
+      id: 'coverage-topology', type: 'deployment-topology', beat: 'system-reveal', title: 'Placement',
+      locations: [{ id: 'edge', label: 'Edge', workloads: ['Router'] }],
+    },
+  ]
+
+  for (const scene of architectureScenes) {
+    it(`renders architecture view: ${scene.type}`, () => {
+      const { container } = render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
+      expect(container.querySelector('.scene')).toBeInTheDocument()
+    })
+  }
 })

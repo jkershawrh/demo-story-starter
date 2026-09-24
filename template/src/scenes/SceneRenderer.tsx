@@ -46,6 +46,27 @@ export function SceneRenderer({ scene, brand }: { scene: SceneConfig; brand: { p
     return <SceneFrame scene={scene}><div className="architecture">{scene.nodes.map((node, index) => <motion.div className={`architecture-node ${toneClass(node.tone)}`} key={node.id} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.12 }}><strong>{node.label}</strong>{node.detail && <span>{node.detail}</span>}</motion.div>)}</div></SceneFrame>
   }
 
+  if (scene.type === 'architecture-flow') {
+    return <SceneFrame scene={scene}><div className="architecture-flow">{scene.steps.map((step, index) => <div className="flow-wrap" key={step.id}><motion.div className={`architecture-node ${toneClass(step.tone)}`} initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.12 }}><strong>{step.label}</strong>{step.detail && <span>{step.detail}</span>}</motion.div>{index < scene.steps.length - 1 && <div className="flow-transition"><span>{step.transition ?? '→'}</span></div>}</div>)}</div></SceneFrame>
+  }
+
+  if (scene.type === 'architecture-layers') {
+    return <SceneFrame scene={scene}><div className="architecture-layers">{scene.layers.map((layer, index) => <motion.div className={`architecture-layer ${toneClass(layer.tone)}`} key={layer.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.12 }}><strong>{layer.label}</strong><span>{layer.responsibility}</span></motion.div>)}</div></SceneFrame>
+  }
+
+  if (scene.type === 'architecture-compare') {
+    const renderSide = (side: typeof scene.before, state: string) => <div className={`architecture-side ${state}`}><div className="metric-label">{side.label}</div>{side.nodes.map((node) => <div className="architecture-chip" key={node}>{node}</div>)}</div>
+    return <SceneFrame scene={scene}><div className="architecture-compare">{renderSide(scene.before, 'before')}<div className="reframe-arrow">→</div>{renderSide(scene.after, 'after')}</div><div className="decision">{scene.insight}</div></SceneFrame>
+  }
+
+  if (scene.type === 'trust-boundary') {
+    return <SceneFrame scene={scene}><div className="boundary-grid">{scene.zones.map((zone) => <div className={`boundary-zone ${toneClass(zone.tone)}`} key={zone.id}><div className="boundary-label">{zone.boundary}</div><h2>{zone.label}</h2>{zone.items.map((item) => <span key={item}>{item}</span>)}</div>)}</div></SceneFrame>
+  }
+
+  if (scene.type === 'deployment-topology') {
+    return <SceneFrame scene={scene}><div className="topology-grid">{scene.locations.map((location) => <div className={`topology-location ${toneClass(location.tone)}`} key={location.id}><h2>{location.label}</h2>{location.detail && <p>{location.detail}</p>}<div>{location.workloads.map((workload) => <span className="architecture-chip" key={workload}>{workload}</span>)}</div></div>)}</div></SceneFrame>
+  }
+
   if (scene.type === 'pipeline') {
     return <SceneFrame scene={scene}><div className="pipeline">{scene.steps.map((step, index) => <div className="pipeline-wrap" key={step.label}><motion.div className="pipeline-step" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: index * 0.14 }}><span>{index + 1}</span><strong>{step.label}</strong>{step.detail && <small>{step.detail}</small>}</motion.div>{index < scene.steps.length - 1 && <div className="connector">→</div>}</div>)}</div></SceneFrame>
   }

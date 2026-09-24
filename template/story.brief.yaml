@@ -1,0 +1,43 @@
+version: 1
+presentation:
+  title: Build the proof, not just the pitch
+  audience: Technical and business decision makers
+  desired_decision: Approve a measured Red Hat and Intel proof of value
+  duration_minutes: 15
+  core_tension: AI ambition is moving faster than operational confidence
+  cta: Choose one workload and prove it on the target platform
+
+source_material:
+  mode: rough-idea
+  items: []
+  consequential_assumptions: []
+
+architecture:
+  actors: []
+  boundaries: []
+  critical_flows: []
+  omitted_from_main_story: []
+
+beats:
+  - beat: ordinary-world
+    claim: Teams can prototype AI faster than they can operationalize it.
+  - beat: stakes
+    claim: Unmeasured assumptions create cost and delivery risk.
+  - beat: system-reveal
+    claim: A right-sized platform makes the decision observable.
+  - beat: live-proof
+    claim: The configured workload can produce a measured result.
+  - beat: transformation
+    claim: The audience can decide from evidence instead of architecture promises.
+
+evidence:
+  - id: example-proof
+    claim: The demonstration returns a measured result.
+    classification: rehearsal-fixture
+    source: public/fixtures/demo-proof.json
+    owner: Demo author
+    last_verified: null
+    treatment: Show with a REHEARSAL badge until the live endpoint succeeds.
+
+live_systems: []
+open_questions: []

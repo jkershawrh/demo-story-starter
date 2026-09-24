@@ -110,6 +110,29 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .architecture-node.tone-primary { border-color: var(--rh-red); }
 .architecture-node.tone-partner { border-color: var(--intel-cyan); }
 .architecture-node.tone-success { border-color: var(--success); }
+.architecture-flow { display: flex; justify-content: center; align-items: stretch; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-5); }
+.flow-wrap { display: flex; align-items: center; gap: var(--space-2); }
+.flow-transition { color: var(--intel-cyan); display: grid; place-items: center; min-width: 34px; font: 700 .8rem 'Red Hat Mono'; }
+.architecture-layers { display: grid; gap: var(--space-2); margin: var(--space-5) auto 0; max-width: 880px; }
+.architecture-layer { display: grid; grid-template-columns: minmax(140px, .35fr) 1fr; gap: var(--space-4); text-align: left; padding: var(--space-3) var(--space-4); background: var(--surface-1); border-left: 4px solid var(--border); border-radius: var(--radius-sm); }
+.architecture-layer span { color: var(--text-secondary); }
+.architecture-layer.tone-primary { border-color: var(--rh-red); }
+.architecture-layer.tone-partner { border-color: var(--intel-cyan); }
+.architecture-layer.tone-success { border-color: var(--success); }
+.architecture-compare { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--space-4); margin: var(--space-5) 0; }
+.architecture-side { min-height: 240px; display: flex; align-content: center; justify-content: center; flex-wrap: wrap; gap: var(--space-2); padding: var(--space-4); border: 2px solid var(--border); border-radius: var(--radius-md); background: var(--surface-1); }
+.architecture-side .metric-label { width: 100%; margin-bottom: var(--space-2); }
+.architecture-side.before { border-color: var(--danger); }
+.architecture-side.after { border-color: var(--success); }
+.architecture-chip { display: inline-block; padding: .55rem .75rem; margin: .25rem; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--border); }
+.boundary-grid, .topology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--space-3); margin-top: var(--space-5); }
+.boundary-zone, .topology-location { position: relative; display: grid; gap: var(--space-2); padding: var(--space-5) var(--space-4) var(--space-4); background: var(--surface-1); border: 2px dashed var(--border); border-radius: var(--radius-md); text-align: left; }
+.boundary-zone.tone-primary, .topology-location.tone-primary { border-color: var(--rh-red); }
+.boundary-zone.tone-partner, .topology-location.tone-partner { border-color: var(--intel-cyan); }
+.boundary-zone.tone-success, .topology-location.tone-success { border-color: var(--success); }
+.boundary-zone h2, .topology-location h2 { margin: 0; }
+.boundary-zone > span, .topology-location p { color: var(--text-secondary); }
+.boundary-label { position: absolute; top: -.65rem; left: 1rem; padding: .15rem .55rem; background: var(--bg); color: var(--warning); font: 700 .65rem 'Red Hat Mono'; text-transform: uppercase; }
 .pipeline-wrap { display: flex; align-items: center; gap: var(--space-3); }
 .pipeline-step { min-width: 180px; padding: var(--space-4); background: var(--surface-1); border: 2px solid var(--intel-cyan); border-radius: var(--radius-md); display: grid; gap: .4rem; }
 .pipeline-step > span { width: 28px; height: 28px; margin: auto; border-radius: 50%; display: grid; place-items: center; background: var(--rh-red); font-weight: 700; }
@@ -155,6 +178,11 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
   .pipeline-wrap { width: 100%; flex-direction: column; }
   .pipeline-step { width: 100%; }
   .connector { transform: rotate(90deg); }
+  .architecture-flow, .flow-wrap { width: 100%; flex-direction: column; }
+  .flow-transition { min-height: 30px; transform: rotate(90deg); }
+  .architecture-layer { grid-template-columns: 1fr; gap: .35rem; }
+  .architecture-compare { grid-template-columns: 1fr; }
+  .architecture-compare .reframe-arrow { transform: rotate(90deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {

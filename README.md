@@ -26,7 +26,9 @@ npm install
 npm run check
 ```
 
-The scaffold is a standalone application. Start by replacing `src/demo.config.ts`; only add custom React scenes when the typed catalog cannot express the proof clearly.
+The scaffold is a standalone application. Start with `story.brief.yaml`, then replace the example in `src/demo.config.ts`; only add custom React scenes when the typed catalog cannot express the proof clearly.
+
+The Codex skill accepts rough ideas, existing stories, architecture diagrams, technical documents, API definitions, or repositories. It normalizes these inputs into the story brief and evidence ledger before generating scenes.
 
 ## Author the story
 
@@ -38,6 +40,11 @@ The scaffold is a standalone application. Start by replacing `src/demo.config.ts
 - Statistic grid
 - Problem/reframe
 - Architecture reveal
+- Request/data-flow architecture
+- Layered architecture
+- Before/after architecture
+- Trust and security boundaries
+- Deployment topology
 - Sequential pipeline
 - Live-proof panel
 - Comparison/benchmark
@@ -47,6 +54,8 @@ The scaffold is a standalone application. Start by replacing `src/demo.config.ts
 - Custom React escape hatch
 
 Configuration validation warns when stakes, proof, or transformation are missing.
+
+`story.brief.yaml` is the checkpoint between source material and implementation. It records the audience decision, narrative tension, architecture elements, consequential assumptions, story beats, live systems, and an evidence classification for every material claim. Keep it with the generated demo so future revisions can distinguish proven behavior from intended behavior.
 
 ## Connect live data
 

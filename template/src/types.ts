@@ -69,6 +69,33 @@ export interface ArchitectureScene extends BaseScene {
   nodes: Array<{ id: string; label: string; detail?: string; tone?: 'primary' | 'partner' | 'success' }>
 }
 
+export interface ArchitectureFlowScene extends BaseScene {
+  type: 'architecture-flow'
+  steps: Array<{ id: string; label: string; detail?: string; transition?: string; tone?: 'primary' | 'partner' | 'success' }>
+}
+
+export interface ArchitectureLayersScene extends BaseScene {
+  type: 'architecture-layers'
+  layers: Array<{ id: string; label: string; responsibility: string; tone?: 'primary' | 'partner' | 'success' }>
+}
+
+export interface ArchitectureCompareScene extends BaseScene {
+  type: 'architecture-compare'
+  before: { label: string; nodes: string[] }
+  after: { label: string; nodes: string[] }
+  insight: string
+}
+
+export interface TrustBoundaryScene extends BaseScene {
+  type: 'trust-boundary'
+  zones: Array<{ id: string; label: string; boundary: string; items: string[]; tone?: 'primary' | 'partner' | 'success' }>
+}
+
+export interface DeploymentTopologyScene extends BaseScene {
+  type: 'deployment-topology'
+  locations: Array<{ id: string; label: string; detail?: string; workloads: string[]; tone?: 'primary' | 'partner' | 'success' }>
+}
+
 export interface PipelineScene extends BaseScene {
   type: 'pipeline'
   steps: Array<{ label: string; detail?: string }>
@@ -116,6 +143,11 @@ export type SceneConfig =
   | StatGridScene
   | ReframeScene
   | ArchitectureScene
+  | ArchitectureFlowScene
+  | ArchitectureLayersScene
+  | ArchitectureCompareScene
+  | TrustBoundaryScene
+  | DeploymentTopologyScene
   | PipelineScene
   | LiveProofScene
   | ComparisonScene
