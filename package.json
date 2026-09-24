@@ -1,0 +1,13 @@
+{
+  "name": "demo-story-starter-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix template run dev",
+    "build": "npm --prefix template run build",
+    "test": "npm --prefix template run test",
+    "check": "npm --prefix template run check",
+    "scaffold": "node --experimental-strip-types skills/demo-story-builder/scripts/scaffold-demo.ts",
+    "install-skill": "node scripts/install-skill.mjs"
+  }
+}

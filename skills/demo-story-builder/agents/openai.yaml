@@ -1,0 +1,7 @@
+interface:
+  display_name: "Demo Story Builder"
+  short_description: "Build Red Hat × Intel live demo stories"
+  brand_color: "#EE0000"
+  default_prompt: "Use $demo-story-builder to turn my brief into a standalone interactive presentation demo."
+policy:
+  allow_implicit_invocation: true
