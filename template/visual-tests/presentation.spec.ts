@@ -7,6 +7,11 @@ test('opening and architecture remain visually stable', async ({ page }) => {
   await expect(page).toHaveScreenshot('architecture.png', { fullPage: true })
 })
 
+test('live journey keeps architecture and proof in one view', async ({ page }) => {
+  await page.goto('/?act=2&scene=0')
+  await expect(page).toHaveScreenshot('live-journey.png', { fullPage: true })
+})
+
 test('core controls are keyboard reachable', async ({ page }) => {
   await page.goto('/?act=0&scene=0')
   await page.keyboard.press('Tab')

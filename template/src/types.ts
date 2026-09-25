@@ -113,6 +113,21 @@ export interface LiveProofScene extends BaseScene {
   resultFields: Array<{ key: string; label: string; suffix?: string }>
 }
 
+export interface LiveJourneyScene extends BaseScene {
+  type: 'live-journey'
+  nodes: Array<{ id: string; label: string; detail?: string; tone?: 'primary' | 'partner' | 'success' }>
+  steps: Array<{
+    id: string
+    title: string
+    detail: string
+    adapterId: string
+    activeNode: number
+    resultFields: Array<{ key: string; label: string; suffix?: string }>
+  }>
+  cta: string
+  workspace?: { label: string; href: string }
+}
+
 export interface ComparisonScene extends BaseScene {
   type: 'comparison'
   columns: Array<{ label: string; value: string; detail?: string; tone?: 'neutral' | 'danger' | 'success' | 'partner' }>
@@ -156,6 +171,7 @@ export type SceneConfig =
   | DeploymentTopologyScene
   | PipelineScene
   | LiveProofScene
+  | LiveJourneyScene
   | ComparisonScene
   | ScaleScene
   | TradeoffScene

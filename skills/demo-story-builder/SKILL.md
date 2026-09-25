@@ -25,7 +25,7 @@ Create a new standalone presentation from the canonical `template/` in this repo
    ```
 
 9. Replace the generated example in `src/demo.config.ts` from the approved story brief. Keep content, live adapters, and presentation mechanics separate.
-10. For each live scene, add a typed adapter and a representative checked-in fixture. Fallback results must remain visibly labeled `REHEARSAL` or `OFFLINE`.
+10. For each live scene, add a typed adapter and a representative checked-in fixture. Fallback results must remain visibly labeled `REHEARSAL` or `OFFLINE`. When proof requires multiple conditions or services, use `live-journey` so returned evidence activates the same architecture revealed in the story.
 11. Use a custom React scene only when the catalog cannot express the proof clearly.
 12. Run `npm run check`. When a browser is available, run `npx playwright install chromium` once and then `npm run test:visual`.
 13. Deliver the story brief, journey acceptance matrix, and rehearsal checklist covering endpoint health, fallback labels, fullscreen, presenter prompts, keyboard/touch navigation, 1920×1080 layout, journey handoffs, and offline assets.

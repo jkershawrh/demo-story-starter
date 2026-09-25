@@ -14,10 +14,11 @@
 - `deployment-topology`: Workloads placed across clusters, sites, or hardware pools.
 - `pipeline`: Ordered causal or technical sequence.
 - `live-proof`: Typed adapter, bounded timeout, visible source state, retry, and rehearsal fixture.
+- `live-journey`: A presenter-controlled sequence of live calls that activates one persistent architecture, pauses after each result, labels source state, and hands off to the working environment. Prefer this when the proof spans multiple conditions or services.
 - `comparison`: Side-by-side benchmark or state comparison.
 - `scale`: Progressive proof from one request to production impact.
 - `tradeoff`: Honest alternatives and the decision criterion.
 - `punchline`: Memorable transformation and CTA.
 - `custom`: React escape hatch for a truly bespoke visualization.
 
-Keep interaction inside the scene purposeful. Clicking empty stage space advances; controls, links, and live-proof buttons must not.
+Keep interaction inside the scene purposeful. Clicking empty stage space advances; controls, links, and live-proof or live-journey buttons must not.

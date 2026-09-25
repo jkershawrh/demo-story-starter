@@ -17,6 +17,7 @@ Use red, amber, and green status during authoring:
 - **Presentation length:** red above ten scenes; amber at eight to ten; green at seven or fewer.
 - **Architecture:** red for a static inventory; amber for unexplained animation; green when each reveal answers an audience question and identifies responsibility and boundary.
 - **Proof:** red when fixtures appear live; amber when fallback is honest but disconnected; green when source state is explicit and proof leads into a workspace.
+- **Architecture-to-proof continuity:** red when architecture disappears before the demo; amber when proof is shown beside a static diagram; green when live steps activate the same architecture, pause on returned evidence, and visibly change under a second input or condition.
 - **Guided experience:** red when no instructor path exists; amber when commands and diagrams are disconnected; green when the guide connects UI, evidence, architecture, and platform resources.
 - **Lab:** red for a read-only tour; amber for edits without qualification; green when the learner builds, tests failures, qualifies behavior, and produces a takeaway artifact.
 - **Handoff:** red when the presentation simply ends; amber for a vague CTA; green when the finale names the next depth, duration, and destination.
@@ -37,3 +38,16 @@ Sequence each layer as:
 
 Do not place every repository component in this sequence. Include a component
 only if it changes the causal explanation, proof, risk, or audience decision.
+
+## Live architecture journey
+
+When the claim spans more than one call, service, or condition, use `live-journey` after `guided-architecture`. Keep one connected architecture visible while the presenter:
+
+1. verifies the deployed boundary,
+2. runs the smallest convincing case,
+3. pauses on returned evidence and source state,
+4. changes one input or condition,
+5. proves a distinguishable outcome through the same path, and
+6. opens the live workspace for deeper inspection.
+
+Do not reset to a disconnected metric card between steps. The audience should be able to point to the component that produced every visible result.

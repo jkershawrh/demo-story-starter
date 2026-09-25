@@ -179,6 +179,22 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .source-live { color: var(--success); background: var(--success-dim); }
 .source-rehearsal, .source-offline { color: var(--warning); background: var(--warning-dim); }
 .fallback-note, .error-panel { color: var(--warning); font-size: .82rem; }
+.journey-status { display: grid; justify-items: center; gap: .35rem; margin: .5rem 0 1.25rem; }
+.journey-status > span:last-child { color: var(--text-dim); }
+.live-architecture { display: flex; align-items: stretch; justify-content: center; margin: 1rem 0; }
+.live-node-wrap { display: flex; align-items: center; }
+.live-node { width: clamp(125px, 14vw, 180px); min-height: 94px; display: grid; place-content: center; gap: .3rem; padding: .8rem; background: var(--surface-1); border: 2px solid var(--border); border-radius: var(--radius-md); }
+.live-node span { color: var(--text-dim); font-size: .75rem; }
+.live-node.done { border-color: var(--success); }
+.live-node.active { border-color: var(--intel-cyan); box-shadow: 0 0 22px rgba(0, 174, 239, .23); }
+.live-edge { width: clamp(22px, 3vw, 46px); color: var(--text-disabled); }
+.live-edge.done { color: var(--success); }
+.journey-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .7rem; margin: 1rem auto; width: min(900px, 100%); }
+.journey-result { display: grid; gap: .25rem; padding: .8rem; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: left; }
+.journey-result span { color: var(--text-dim); font: 700 .65rem 'Red Hat Mono'; text-transform: uppercase; }
+.journey-result strong { color: var(--intel-cyan); overflow-wrap: anywhere; }
+.journey-controls { display: flex; justify-content: center; gap: .75rem; margin-top: 1rem; }
+.journey-controls a { text-decoration: none; }
 
 .finale { cursor: default; }
 .related-card { display: grid; gap: .65rem; text-decoration: none; border-left: 3px solid var(--intel-cyan); }
@@ -212,6 +228,11 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
   .architecture-map-item { grid-template-columns: 1fr; text-align: center; font-size: .65rem; border-left: 0; border-bottom: 3px solid var(--border); }
   .architecture-map-item > span { margin: auto; }
   .architecture-compare .reframe-arrow { transform: rotate(90deg); }
+  .live-architecture { display: grid; }
+  .live-node-wrap { flex-direction: column; }
+  .live-node { width: min(320px, 80vw); min-height: 68px; }
+  .live-edge { transform: rotate(90deg); height: 24px; }
+  .journey-controls { flex-wrap: wrap; }
 }
 
 @media (prefers-reduced-motion: reduce) {

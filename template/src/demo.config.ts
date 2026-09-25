@@ -17,8 +17,17 @@ export const demoConfig: DemoConfig = {
         { id: 'decision', component: 'Human decision', tone: 'primary', question: 'Who decides what happens next?', answer: 'The audience reviews the evidence and chooses the next journey.', detail: 'End architecture at the human outcome, not at the final technology box.' },
       ], speakerPrompt: 'Pause on every question. Invite an answer before revealing the architecture response.' },
     ] },
-    { id: 'proof', label: '02', title: 'Live Proof', scenes: [
-      { id: 'live', type: 'live-proof', beat: 'live-proof', eyebrow: 'Live proof', title: 'Measure the claim in front of the audience', body: 'This example visibly falls back to a checked-in fixture when no API is configured.', adapterId: 'demo-proof', cta: 'Run live proof', resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }], speakerPrompt: 'State LIVE, REHEARSAL, or OFFLINE before interpreting the result.' },
+    { id: 'proof', label: '02', title: 'Live Walkthrough', scenes: [
+      { id: 'live', type: 'live-journey', beat: 'live-proof', eyebrow: 'Live infrastructure · guided walkthrough', title: 'Watch evidence move through the architecture', body: 'Run one condition, pause on its evidence, then change the input and prove that the system responds.', cta: 'Run the live journey', workspace: { label: 'Open the live workspace', href: '/' }, nodes: [
+        { id: 'input', label: 'Experience input', detail: 'bounded request', tone: 'primary' },
+        { id: 'platform', label: 'Red Hat platform', detail: 'policy and operations', tone: 'primary' },
+        { id: 'compute', label: 'Intel compute', detail: 'measured execution', tone: 'partner' },
+        { id: 'adapter', label: 'Proof adapter', detail: 'typed evidence', tone: 'success' },
+        { id: 'decision', label: 'Human decision', detail: 'authority stays visible', tone: 'primary' },
+      ], steps: [
+        { id: 'baseline', title: 'Run the first condition', detail: 'The live response activates the system path and exposes its source state.', adapterId: 'demo-proof', activeNode: 3, resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }] },
+        { id: 'changed', title: 'Change the evidence', detail: 'A second condition must produce a distinguishable result through the same architecture.', adapterId: 'demo-proof-changed', activeNode: 4, resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }] },
+      ], speakerPrompt: 'Narrate the architecture while it runs. Say LIVE, REHEARSAL, or OFFLINE before interpreting each result.' },
       { id: 'tradeoff', type: 'comparison', beat: 'trials', title: 'Show the decision boundary, not only the winner', columns: [{ label: 'Claim', value: 'Observable', detail: 'The proof answers the question posed by the story.', tone: 'success' }, { label: 'Limit', value: 'Explicit', detail: 'Scope, fallback state, and next validation remain visible.', tone: 'partner' }], speakerPrompt: 'Stop adding slides. Use the limitation to choose the next live or guided depth.' },
     ] },
     { id: 'payoff', label: '03', title: 'The Handoff', scenes: [

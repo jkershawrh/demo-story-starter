@@ -16,10 +16,19 @@ describe('SceneRenderer', () => {
   }
 
   it('labels rehearsal data instead of presenting it as live', async () => {
-    const scene = scenes.find((item) => item.type === 'live-proof')!
+    const scene: SceneConfig = { id: 'fallback', type: 'live-proof', beat: 'live-proof', title: 'Proof', adapterId: 'demo-proof', cta: 'Run live proof', resultFields: [{ key: 'outcome', label: 'Outcome' }] }
     render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
     fireEvent.click(screen.getByRole('button', { name: /run live proof/i }))
     expect(await screen.findByText('rehearsal')).toBeInTheDocument()
+  })
+
+  it('runs a guided proof through the visible architecture', async () => {
+    const scene = scenes.find((item) => item.type === 'live-journey')!
+    render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
+    expect(screen.getByLabelText('Live architecture journey')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /run the live journey/i }))
+    expect(await screen.findByText('Run the first condition')).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: /next live act/i })).toBeInTheDocument()
   })
 
   it('renders the statistic-grid scene', () => {
