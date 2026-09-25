@@ -32,14 +32,23 @@ The scaffold is a standalone application. Start with `demo-blueprint.yaml`, then
 
 The Codex skill accepts rough ideas, existing stories, architecture diagrams, technical documents, API definitions, or repositories. It first normalizes the source into a verified architecture, operational pattern, evidence inventory, decision model, and AI-necessity assessment. The story brief and scenes are downstream products of that blueprint.
 
-For a repository or QuickStart, generate a deterministic first-pass inventory:
+For a repository or QuickStart, automate intake, discovery, and scaffolding:
 
 ```bash
-npm run discover -- /path/to/source /path/to/source/demo-blueprint.discovered.yaml
-npm run validate:blueprint -- /path/to/source/demo-blueprint.yaml
+npm run bootstrap -- /path/to/source ../source-demo \
+  --name source-demo \
+  --title "The decision this system proves" \
+  --subtitle "Red Hat × Intel interactive demo"
 ```
 
-Discovery identifies candidate runtime objects and AI signals; it never promotes them to truth. Review the draft against contracts, manifests, tests, implementation, and live observations before changing its status from `draft`.
+The command scaffolds the standalone app, runs repository discovery, installs the resulting `demo-blueprint.yaml`, initializes `story.brief.yaml`, and writes `discovery-review.md` with detected artifacts, unresolved decisions, and the required verification sequence. Discovery identifies candidates and AI signals; it never promotes them to truth. Review the draft against contracts, manifests, tests, implementation, and live observations before changing its status from `draft`.
+
+Lower-level discovery and validation commands remain available when needed:
+
+```bash
+npm run discover -- /path/to/source /tmp/demo-blueprint.discovered.yaml
+npm run validate:blueprint -- /path/to/demo-blueprint.yaml
+```
 
 ## Author the story
 

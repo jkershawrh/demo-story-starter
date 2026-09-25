@@ -11,18 +11,21 @@ Create a new standalone presentation from the canonical `template/` in this repo
 
 ## Workflow
 
-1. Identify the source mode: rough idea, existing story/deck, architecture image, technical document, API definition, or repository. Read [intake-and-conversion.md](references/intake-and-conversion.md) and [discovery-blueprint.md](references/discovery-blueprint.md). For repositories, run the deterministic discovery script, then verify its findings against contracts, deployment manifests, tests, observability, and implementation. Do not author scenes before `demo-blueprint.yaml` is reviewable.
+1. Identify the source mode: rough idea, existing story/deck, architecture image, technical document, API definition, or repository. Read [intake-and-conversion.md](references/intake-and-conversion.md) and [discovery-blueprint.md](references/discovery-blueprint.md). For repositories, run the automated bootstrap command below. It performs deterministic discovery, scaffolds the app, installs the draft blueprint, initializes the story brief, and writes a review report. Verify its findings against contracts, deployment manifests, tests, observability, and implementation. Do not author scenes before `demo-blueprint.yaml` is reviewable.
 2. Confirm or infer the audience, desired decision, short-pitch duration, core tension, proof points, live systems, guided-demo depth, hands-on outcome, and closing CTA. Clearly mark consequential assumptions instead of silently filling them in.
 3. Complete `demo-blueprint.yaml` before `story.brief.yaml`. The blueprint is the source of truth for actors, runtime objects, boundaries, flows, operational pattern, evidence, decisions, and AI involvement. Validate it with `npm run validate:blueprint -- <path>`. Then create `story.brief.yaml`; read [evidence-ledger.md](references/evidence-ledger.md), classify every material claim, and separate observed behavior from aspiration.
 4. Read [story-framework.md](references/story-framework.md), [journey-system.md](references/journey-system.md), and [progressive-proof-pattern.md](references/progressive-proof-pattern.md), then design the complete experience before converting the short story into acts. Make the audience's decision—not the component inventory—the organizing spine.
 5. For architecture-heavy sources, read [architecture-storytelling.md](references/architecture-storytelling.md). Omit components that do not change the causal explanation, proof, risk, or decision.
 6. Read [scene-catalog.md](references/scene-catalog.md) when mapping beats to scene types or adding a custom scene.
 7. Read [brand-system.md](references/brand-system.md) before changing logos, colors, typography, or spacing.
-8. Run the scaffold script from this repository:
+8. For a repository or QuickStart, run the complete intake automation from this repository:
 
    ```bash
-   npm run scaffold -- <destination> --name <package-name> --title "<title>" --subtitle "<subtitle>"
+   npm run bootstrap -- <source-repository> <destination> \
+     --name <package-name> --title "<title>" --subtitle "<subtitle>"
    ```
+
+   Use `npm run scaffold` directly only for non-repository inputs. After bootstrap, read `discovery-review.md`, resolve every blocking unknown, promote verified items in `demo-blueprint.yaml`, and validate it. Automation may create a draft; it may never self-approve discovered claims.
 
 9. Replace the generated example in `src/demo.config.ts` from the approved blueprint and story brief. Derive guided architecture from `architecture.flows`, the live journey from `operational_pattern`, and LLM scenes only from `ai_assessment`. Keep content, live adapters, and presentation mechanics separate.
 10. For each live scene, add a typed adapter and a representative checked-in fixture. Fallback results must remain visibly labeled `REHEARSAL` or `OFFLINE`. When proof requires multiple conditions or services, use `live-journey` so returned evidence activates the same architecture revealed in the story. Follow it with a changed condition, concise inline mechanism explanation, and `evidence-payoff`; the payoff must consume the current session's proof state.

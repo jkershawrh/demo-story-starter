@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process'
 const root = resolve(process.argv[2] ?? '.')
 const output = resolve(process.argv[3] ?? join(root, 'demo-blueprint.discovered.yaml'))
 const ignored = new Set(['.git', '.claude', '.codex', 'node_modules', 'dist', 'build', 'coverage', 'target', 'vendor', '.next'])
-const interesting = /(^|\/)(readme|agents|architecture|openapi|asyncapi|dockerfile|containerfile|compose|chart|values|deployment|service|route|ingress|package\.json|pyproject\.toml|go\.mod|pom\.xml|cargo\.toml|.*\.(ya?ml|json))$/i
+const interesting = /(^|\/)(readme(?:\.[^/]+)?|agents(?:\.[^/]+)?|architecture(?:\.[^/]+)?|openapi(?:\.[^/]+)?|asyncapi(?:\.[^/]+)?|dockerfile|containerfile|compose(?:\.[^/]+)?|chart(?:\.[^/]+)?|values(?:\.[^/]+)?|deployment(?:\.[^/]+)?|service(?:\.[^/]+)?|route(?:\.[^/]+)?|ingress(?:\.[^/]+)?|package\.json|pyproject\.toml|go\.mod|pom\.xml|cargo\.toml|.*\.(ya?ml|json|md|adoc|py|ts|tsx|go|java|rs))$/i
 
 async function walk(path: string, files: string[] = []): Promise<string[]> {
   for (const item of await readdir(path, { withFileTypes: true })) {
