@@ -36,7 +36,8 @@ export interface BaseScene {
 
 export interface GuidedArchitectureScene extends BaseScene {
   type: 'guided-architecture'
-  layers: Array<{ id: string; question: string; answer: string; component: string; detail: string; tone?: 'primary' | 'partner' | 'success' }>
+  layers: Array<{ id: string; question: string; answer: string; component: string; detail: string; tone?: 'primary' | 'partner' | 'success'; activeNodeIds?: string[] }>
+  technicalTopology?: LiveJourneyScene['technicalTopology']
 }
 
 export interface IntroScene extends BaseScene {

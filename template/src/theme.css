@@ -223,6 +223,14 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .topology-edge.dashed { opacity: .6; }
 .topology-optional { grid-column: 2; display: flex; justify-content: flex-end; align-items: center; opacity: .72; }
 .topology-optional .topology-node { width: 190px; min-height: 52px; }
+.guided-technical { grid-template-columns: 1fr; gap: .65rem; margin-top: .5rem; }
+.guided-technical .architecture-map { grid-template-columns: repeat(5, 1fr); }
+.guided-technical .architecture-map-item { grid-template-columns: 22px 1fr; padding: .4rem .55rem; font-size: .68rem; }
+.guided-technical .architecture-map-item > span { width: 20px; height: 20px; }
+.guided-technical .architecture-dialog { min-height: 190px; padding: 1rem 1.25rem; gap: .55rem; }
+.guided-technical .architecture-question h2 { font-size: clamp(1.2rem, 2vw, 1.7rem); margin: .25rem 0; }
+.guided-technical .architecture-answer h3 { font-size: 1rem; }
+.guided-technical .architecture-answer p { font-size: .78rem; margin: .2rem 0; }
 
 .finale { cursor: default; }
 .related-card { display: grid; gap: .65rem; text-decoration: none; border-left: 3px solid var(--intel-cyan); }

@@ -36,6 +36,8 @@ Sequence each layer as:
 4. Name its boundary, failure behavior, or authority limit.
 5. Connect it causally to the next question.
 
+Use two distinct presenter actions per layer: first show only the audience question; then reveal the answer and activate the corresponding technical nodes and edges. Do not display the completed topology before the audience has stepped through it.
+
 Do not place every repository component in this sequence. Include a component
 only if it changes the causal explanation, proof, risk, or audience decision.
 

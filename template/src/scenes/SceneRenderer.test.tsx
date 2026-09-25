@@ -61,7 +61,11 @@ describe('SceneRenderer', () => {
     const scene = scenes.find((item) => item.type === 'guided-architecture')!
     render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
     expect(screen.getByText('What enters the system?')).toBeInTheDocument()
-    fireEvent.click(screen.getByRole('button', { name: 'Reveal next boundary' }))
+    expect(screen.queryByText('A bounded, validated request starts the journey.')).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Reveal technical boundary' }))
+    expect(await screen.findByText('A bounded, validated request starts the journey.')).toBeInTheDocument()
+    expect(document.querySelector('[data-node="route"]')).toHaveClass('active')
+    fireEvent.click(screen.getByRole('button', { name: 'Ask next question →' }))
     expect(await screen.findByText('Where does the workload run and remain governable?')).toBeInTheDocument()
   })
 
