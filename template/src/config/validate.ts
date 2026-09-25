@@ -31,7 +31,7 @@ export function validateDemoConfig(config: DemoConfig): string[] {
   if (!scenes.some((scene) => scene.type === 'guided-architecture')) warnings.push('Story is missing a guided architecture reveal.')
   if (!scenes.some((scene) => scene.type === 'live-proof' || scene.type === 'live-journey')) warnings.push('Story is missing a live proof scene.')
   const handoffs = config.journeyHandoffs ?? config.relatedStories ?? []
-  if (handoffs.length < 3) warnings.push('Finale must hand off to live demonstration, guided demo, and hands-on lab journeys.')
+  if (!handoffs.length) warnings.push('Finale must provide one explicit guided handoff or close.')
   if (!scenes.some((scene) => scene.type === 'mechanisms')) warnings.push('Pre-lab journey is missing a mechanism deep dive.')
   if (!scenes.some((scene) => scene.type === 'evidence-payoff')) warnings.push('Payoff should recap evidence produced during the live journey.')
   for (const scene of scenes) {

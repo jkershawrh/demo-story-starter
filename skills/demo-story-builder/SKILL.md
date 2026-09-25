@@ -44,3 +44,5 @@ Create a new standalone presentation from the canonical `template/` in this repo
 - Treat presentation, live demonstration, guided demo, and hands-on lab as progressive depths of one journey. Preserve architecture, evidence, and source state between them.
 - Match the Triforce cadence: one sparse claim per opening beat; challenge then technical answer in architecture; live infrastructure responses accumulated into an inspectable evidence case; a payoff populated only from the current session.
 - Desktop presentation scenes must fit inside one viewport without page scrolling. Narrow rehearsal views may scroll.
+- A live topology is a narrated path, not a static diagram. Advance one meaningful boundary per click; at every step show what is happening, why that boundary matters, and the live measurement or decision produced there.
+- End with one deliberate guided handoff and an explicit `Close presentation` control. Do not replace a close with a menu of competing demo depths.

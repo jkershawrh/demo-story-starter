@@ -245,6 +245,12 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .guided-technical .architecture-answer p { font-size: .78rem; margin: .2rem 0; }
 
 .finale { cursor: default; }
+.guided-handoff { width: min(680px, 100%); display: grid; justify-items: center; gap: .8rem; margin: 2rem auto; padding: 1.5rem; border: 1px solid var(--intel-cyan); border-radius: var(--radius-md); background: var(--intel-cyan-dim); }
+.guided-handoff > strong { color: var(--intel-cyan); font-size: 1.4rem; }
+.guided-handoff > span { max-width: 580px; color: var(--text-secondary); line-height: 1.5; }
+.guided-handoff .button { text-decoration: none; }
+.finale-actions { display: flex; justify-content: center; gap: .75rem; }
+.button-quiet { color: var(--text-dim); background: transparent; border: 0; }
 .related-card { display: grid; gap: .65rem; text-decoration: none; border-left: 3px solid var(--intel-cyan); }
 .related-card em { color: var(--text); }
 .related-card span { color: var(--text-dim); font-size: .85rem; }

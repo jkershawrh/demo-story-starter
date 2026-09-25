@@ -59,8 +59,6 @@ export const demoConfig: DemoConfig = {
     ] },
   ],
   journeyHandoffs: [
-    { depth: 'live', title: 'Live Demonstration', duration: '5–10 minutes', question: 'Can the claim survive a second input or condition?', technology: 'Live system · Observable evidence · Honest fallback', instruction: 'Open the operator or proof workspace.' },
-    { depth: 'guided', title: 'Guided Demo', duration: '20–35 minutes', question: 'Can the audience trace architecture, proof, and mechanism?', technology: 'Instructor prompts · Guided inspection · Checkpoints', instruction: 'Repeat the same journey with participant decisions.' },
-    { depth: 'lab', title: 'Hands-on Lab', duration: '60–90 minutes', question: 'Can participants extend, break, and qualify the pattern?', technology: 'Build · Failure modes · Qualification · Takeaway artifact', instruction: 'Continue with the evidence and architecture already established.' },
+    { depth: 'guided', title: 'Guided experience', duration: '20–35 minutes', question: 'Can the audience trace and challenge the evidence?', technology: 'Live workspace · Guided inspection · Human decision', instruction: 'Continue the same evidence path with participant decisions.', href: '/' },
   ],
 }
