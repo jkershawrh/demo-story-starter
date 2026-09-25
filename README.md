@@ -2,7 +2,7 @@
 
 A reusable Red Hat × Intel interactive presentation system derived from the Triforce demo story arc. It combines a guided hero’s-journey schema, a React/Vite presentation runtime, reusable animated scenes, honest live-data fallback states, and a Codex authoring skill.
 
-Its central pattern is **progressive proof**: story → guided causal architecture → live workflow → changed condition or scale trial → inline mechanism explanation → evidence-derived payoff → guided practice or lab. These are increasing depths of one journey, not separate experiences that restart the narrative.
+Its central pattern is **discovery-led progressive proof**: repository or QuickStart → verified demo blueprint → story → guided causal architecture → live workflow → changed condition or scale trial → inline mechanism explanation → evidence-derived payoff → close → optional lab handoff. Triforce supplies the cadence; each source system supplies its own architecture and operational pattern.
 
 ## Quick start
 
@@ -28,9 +28,18 @@ npm install
 npm run check
 ```
 
-The scaffold is a standalone application. Start with `story.brief.yaml`, then replace the example in `src/demo.config.ts`; only add custom React scenes when the typed catalog cannot express the proof clearly.
+The scaffold is a standalone application. Start with `demo-blueprint.yaml`, then author `story.brief.yaml` and replace the example in `src/demo.config.ts`; only add custom React scenes when the typed catalog cannot express the proof clearly.
 
-The Codex skill accepts rough ideas, existing stories, architecture diagrams, technical documents, API definitions, or repositories. It normalizes these inputs into the story brief and evidence ledger before generating scenes.
+The Codex skill accepts rough ideas, existing stories, architecture diagrams, technical documents, API definitions, or repositories. It first normalizes the source into a verified architecture, operational pattern, evidence inventory, decision model, and AI-necessity assessment. The story brief and scenes are downstream products of that blueprint.
+
+For a repository or QuickStart, generate a deterministic first-pass inventory:
+
+```bash
+npm run discover -- /path/to/source /path/to/source/demo-blueprint.discovered.yaml
+npm run validate:blueprint -- /path/to/source/demo-blueprint.yaml
+```
+
+Discovery identifies candidate runtime objects and AI signals; it never promotes them to truth. Review the draft against contracts, manifests, tests, implementation, and live observations before changing its status from `draft`.
 
 ## Author the story
 
@@ -60,7 +69,7 @@ The Codex skill accepts rough ideas, existing stories, architecture diagrams, te
 
 Configuration validation warns when stakes, proof, transformation, guided architecture, live proof, or explicit live-demo/guided-demo/lab handoffs are missing. By default, keep the presenter story to 5–7 minutes and no more than seven scenes; move deeper comparison and construction into the connected experiences.
 
-`story.brief.yaml` is the checkpoint between source material and implementation. It records the audience decision, narrative tension, architecture elements, consequential assumptions, story beats, live systems, and an evidence classification for every material claim. Keep it with the generated demo so future revisions can distinguish proven behavior from intended behavior.
+`demo-blueprint.yaml` is the checkpoint between source discovery and storytelling. It records the actors, runtime objects, typed flows, boundaries, operational pattern, evidence, decisions, and exact AI/LLM role. `story.brief.yaml` then records the audience decision and narrative compression chosen from that verified foundation. Keep both with the demo so future revisions can distinguish source truth, interpretation, and intended behavior.
 
 ## Connect live data
 

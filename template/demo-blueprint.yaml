@@ -1,0 +1,58 @@
+version: 1
+status: draft
+source:
+  name: demo-story
+  kind: repository
+  location: .
+  revision: unknown
+  discovered_at: null
+  inspected_artifacts: []
+  discrepancies: []
+
+intent:
+  primary_user: unknown
+  workload: unknown
+  recognized_problem: unknown
+  audience_decision: unknown
+  desired_outcome: unknown
+
+architecture:
+  actors: []
+  runtime_objects: []
+  boundaries: []
+  external_dependencies: []
+  flows: []
+
+operational_pattern:
+  name: unknown
+  rationale: Define the sequence in the source system's own domain language.
+  steps: []
+  changed_condition: null
+  close: null
+
+evidence: []
+decisions: []
+
+ai_assessment:
+  needed: unknown
+  kind: none
+  rationale: unknown
+  tasks: []
+  inputs: []
+  outputs: []
+  model_identity_source: null
+  hardware_identity_source: null
+  evidence_access: []
+  action_authority: none
+  validation: []
+  fallback: unknown
+  final_decision_owner: unknown
+
+story_mapping:
+  audience_question: unknown
+  stakes: []
+  architecture_flow_ids: []
+  live_proof_flow_ids: []
+  comparison: null
+  payoff: unknown
+  next_journey: unknown

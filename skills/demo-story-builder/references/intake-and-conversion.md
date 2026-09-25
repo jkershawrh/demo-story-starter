@@ -7,9 +7,9 @@ Choose the source mode before outlining the presentation.
 - **Architecture image:** identify boundaries, actors, request/data paths, bottlenecks, trust transitions, and the component responsible for the claimed outcome. Ask for labels only when ambiguity changes the story.
 - **Technical document:** distinguish requirements, current implementation, benchmark results, roadmap claims, and open questions.
 - **API or schema:** identify the smallest request and response that demonstrates the claim, then design the live proof and its honest fixture.
-- **Repository:** inspect entry points, contracts, deployment manifests, tests, and observability before low-level implementation. Prefer documented architecture over inferred coupling, and record discrepancies.
+- **Repository or QuickStart:** run deterministic discovery first, then inspect entry points, contracts, deployment manifests, tests, observability, and implementation. Produce and review `demo-blueprint.yaml` before choosing scenes. Prefer verified architecture over inferred coupling, record discrepancies, and identify the source system's natural operational pattern rather than imposing one from another demo.
 
-Normalize the source into `story.brief.yaml`. Keep source wording only when it is accurate, concise, and audience-appropriate.
+Normalize system truth into `demo-blueprint.yaml`, then narrative intent into `story.brief.yaml`. Keep source wording only when it is accurate, concise, and audience-appropriate.
 
 ## Conversion test
 

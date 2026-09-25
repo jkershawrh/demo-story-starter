@@ -1,4 +1,5 @@
 version: 1
+blueprint: demo-blueprint.yaml
 presentation:
   title: Build the proof, not just the pitch
   audience: Technical and business decision makers

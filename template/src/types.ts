@@ -1,5 +1,68 @@
 import type { ComponentType } from 'react'
 
+export type DiscoveryStatus = 'discovered' | 'verified' | 'assumed' | 'unknown' | 'excluded'
+
+export interface BlueprintNode {
+  id: string
+  name: string
+  kind: string
+  responsibility: string
+  status: DiscoveryStatus
+  source: string
+}
+
+export interface BlueprintFlowEdge {
+  from: string
+  to: string
+  purpose: string
+  protocol?: string
+  evidenceIds?: string[]
+}
+
+export interface BlueprintFlow {
+  id: string
+  name: string
+  kind: 'request' | 'event' | 'data' | 'evidence' | 'decision' | 'authority'
+  trigger: string
+  outcome: string
+  edges: BlueprintFlowEdge[]
+}
+
+export interface OperationalStep {
+  id: string
+  label: string
+  question: string
+  flowIds: string[]
+  evidenceIds: string[]
+  decisionId?: string
+}
+
+export interface AiAssessment {
+  needed: boolean | 'optional' | 'unknown'
+  kind: 'none' | 'rules' | 'classical-ml' | 'embeddings' | 'generative-llm' | 'agentic' | 'mixed'
+  rationale: string
+  tasks: string[]
+  inputs: string[]
+  outputs: string[]
+  evidenceAccess: string[]
+  actionAuthority: 'none' | 'recommend' | 'bounded-actions' | 'autonomous' | 'unknown'
+  validation: string[]
+  fallback: string
+  finalDecisionOwner: string
+}
+
+export interface DemoBlueprint {
+  version: 1
+  status: 'draft' | 'reviewed' | 'approved'
+  source: { name: string; kind: string; location: string; revision: string; discoveredAt?: string; inspectedArtifacts: string[]; discrepancies: string[] }
+  intent: { primaryUser: string; workload: string; recognizedProblem: string; audienceDecision: string; desiredOutcome: string }
+  architecture: { actors: BlueprintNode[]; runtimeObjects: BlueprintNode[]; boundaries: BlueprintNode[]; externalDependencies: BlueprintNode[]; flows: BlueprintFlow[] }
+  operationalPattern: { name: string; rationale: string; steps: OperationalStep[]; changedCondition?: string; close?: string }
+  evidence: Array<{ id: string; name: string; source: string; collection: string; supports: string; status: DiscoveryStatus }>
+  decisions: Array<{ id: string; owner: string; policy: string; failClosedBehavior: string; status: DiscoveryStatus }>
+  aiAssessment: AiAssessment
+}
+
 export type StoryBeat =
   | 'ordinary-world'
   | 'stakes'

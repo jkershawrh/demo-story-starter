@@ -1,0 +1,273 @@
+version: 1
+status: reviewed
+source:
+  name: triforce
+  kind: repository
+  location: ../triforce
+  revision: reference
+  discovered_at: "2026-09-25"
+  inspected_artifacts:
+    - AGENTS.md
+    - contracts/
+    - infrastructure/helm/
+    - modules/
+    - services/
+    - frontend/src/
+    - tests/validation_matrix.yaml
+    - tests/benchmark_rubric.yaml
+  discrepancies: []
+
+intent:
+  primary_user: Enterprise AI platform and application teams
+  workload: Healthcare and financial-services inference workflows
+  recognized_problem: Different inference tasks need different model sizes and hardware, while operators need observable cost, latency, and quality tradeoffs.
+  audience_decision: Select a workload-specific model, hardware path, and optimization set from measured evidence.
+  desired_outcome: Prove heterogeneous inference on Red Hat OpenShift and Intel compute without hiding routing, model, cost, or fallback behavior.
+
+architecture:
+  actors:
+    - id: presenter
+      name: Presenter or operator
+      kind: human
+      responsibility: Select a workload, run proof conditions, and interpret evidence.
+      status: verified
+      source: frontend/src/
+  runtime_objects:
+    - id: frontend
+      name: React presentation
+      kind: web-application
+      responsibility: Guide the story and invoke live proof APIs.
+      status: verified
+      source: frontend/
+    - id: semantic-router
+      name: vLLM Semantic Router
+      kind: routing-service
+      responsibility: Classify request complexity and select a right-sized route.
+      status: verified
+      source: services/semantic-router/
+    - id: healthcare-agent
+      name: Healthcare agent
+      kind: python-service
+      responsibility: Execute clinical classification, extraction, summarization, and optimization workflows.
+      status: verified
+      source: services/healthcare-agent/
+    - id: finserv-agent
+      name: Financial services agent
+      kind: quarkus-service
+      responsibility: Execute fraud and compliance workflows.
+      status: verified
+      source: services/finserv-agent/
+    - id: orchestrator
+      name: Orchestrator
+      kind: go-service
+      responsibility: Coordinate workflows and events without performing inference.
+      status: verified
+      source: services/orchestrator/
+    - id: mcp-gateway
+      name: MCP gateway
+      kind: tool-service
+      responsibility: Expose bounded federated tools with explicit fallback state.
+      status: verified
+      source: services/mcp-gateway/
+    - id: amq
+      name: AMQ Streams
+      kind: event-broker
+      responsibility: Carry workflow events on OpenShift.
+      status: verified
+      source: infrastructure/helm/
+    - id: postgres
+      name: PostgreSQL
+      kind: database
+      responsibility: Persist audit and inference statistics.
+      status: verified
+      source: infrastructure/helm/
+    - id: maas
+      name: MAAS and LiteLLM
+      kind: model-gateway
+      responsibility: Expose CPU and Gaudi model endpoints.
+      status: verified
+      source: services/healthcare-agent/
+  boundaries:
+    - id: openshift
+      name: OpenShift workload boundary
+      kind: platform
+      responsibility: Host, route, scale, and observe application services.
+      status: verified
+      source: infrastructure/helm/
+    - id: inference
+      name: External inference boundary
+      kind: external-service
+      responsibility: Separate workload orchestration from model serving.
+      status: verified
+      source: services/healthcare-agent/
+  external_dependencies:
+    - id: cpu-pool
+      name: Intel Xeon CPU models
+      kind: inference-hardware
+      responsibility: Serve right-sized CPU inference paths.
+      status: verified
+      source: AGENTS.md
+    - id: gaudi-pool
+      name: Intel Gaudi models
+      kind: inference-hardware
+      responsibility: Serve larger accelerator-backed inference paths.
+      status: verified
+      source: AGENTS.md
+  flows:
+    - id: routed-inference
+      name: Complexity-routed inference request
+      kind: request
+      trigger: User submits a supported domain workload.
+      outcome: A selected agent returns task output with model, hardware, latency, and source evidence.
+      edges:
+        - from: frontend
+          to: semantic-router
+          purpose: Submit bounded workload text for route selection.
+          protocol: HTTPS JSON
+          evidence_ids: [route-decision]
+        - from: semantic-router
+          to: healthcare-agent
+          purpose: Send a healthcare task to the selected workflow.
+          protocol: HTTP JSON
+        - from: healthcare-agent
+          to: mcp-gateway
+          purpose: Retrieve bounded tool context when configured.
+          protocol: MCP over HTTP
+          evidence_ids: [tool-source]
+        - from: healthcare-agent
+          to: maas
+          purpose: Run the selected model on the selected hardware path.
+          protocol: OpenAI-compatible HTTPS
+          evidence_ids: [model-run]
+        - from: healthcare-agent
+          to: postgres
+          purpose: Record inference and audit statistics.
+          protocol: PostgreSQL
+    - id: coordinated-event
+      name: Multi-agent coordination event
+      kind: event
+      trigger: A workflow requires cross-service coordination.
+      outcome: The orchestrator coordinates state while domain agents retain inference responsibility.
+      edges:
+        - from: healthcare-agent
+          to: amq
+          purpose: Publish workflow event.
+          protocol: Kafka
+        - from: amq
+          to: orchestrator
+          purpose: Deliver event for coordination.
+          protocol: Kafka
+        - from: orchestrator
+          to: finserv-agent
+          purpose: Coordinate downstream domain work without inference.
+          protocol: HTTP or event
+
+operational_pattern:
+  name: Classify, route, execute, observe, compare, decide
+  rationale: Triforce proves that workload characteristics—not a universal model choice—determine the right model, hardware, and optimization path.
+  steps:
+    - id: classify
+      label: Classify the workload
+      question: What task and complexity entered the system?
+      flow_ids: [routed-inference]
+      evidence_ids: [route-decision]
+    - id: route
+      label: Select model and hardware
+      question: Which right-sized execution path did the router choose?
+      flow_ids: [routed-inference]
+      evidence_ids: [route-decision]
+    - id: execute
+      label: Execute the domain workflow
+      question: Which agent, tools, and model actually participated?
+      flow_ids: [routed-inference]
+      evidence_ids: [tool-source, model-run]
+    - id: observe
+      label: Observe the result
+      question: What latency, model, hardware, cost, and source state returned live?
+      flow_ids: [routed-inference]
+      evidence_ids: [model-run]
+    - id: compare
+      label: Change one condition
+      question: How does the same task behave with a different model, hardware path, or optimization?
+      flow_ids: [routed-inference]
+      evidence_ids: [model-run, benchmark-result]
+    - id: decide
+      label: Make a workload-specific decision
+      question: Which measured path meets the workload's quality, latency, and cost requirements?
+      flow_ids: [routed-inference]
+      evidence_ids: [benchmark-result]
+      decision_id: workload-selection
+  changed_condition: Model, hardware path, workload complexity, or enabled optimization module.
+  close: Select one target workload and prove its preferred path against the benchmark rubric.
+
+evidence:
+  - id: route-decision
+    name: Semantic route, model, confidence, and routing latency
+    source: Semantic router API
+    collection: Live response in the current browser session
+    supports: The request followed the displayed complexity route.
+    status: verified
+  - id: tool-source
+    name: MCP tool source state
+    source: MCP gateway response
+    collection: Live response or explicitly labeled fallback
+    supports: Context came from the named live or fallback source.
+    status: verified
+  - id: model-run
+    name: Model, hardware, latency, output, and source state
+    source: Domain agent response
+    collection: Live response in the current browser session
+    supports: The displayed inference path actually ran.
+    status: verified
+  - id: benchmark-result
+    name: Same-task model and hardware comparison
+    source: Benchmark API and rubric
+    collection: Live benchmark response
+    supports: A workload-specific choice from measured tradeoffs.
+    status: verified
+
+decisions:
+  - id: workload-selection
+    owner: Presenter or platform evaluator
+    policy: Compare quality, latency, cost, and task suitability against the benchmark rubric.
+    fail_closed_behavior: Do not claim a winner when a model is unavailable, output is malformed, or evidence is fallback-only.
+    status: verified
+
+ai_assessment:
+  needed: true
+  kind: mixed
+  rationale: Embedding classification selects a route, and generative models perform domain tasks; the Go orchestrator performs no inference.
+  tasks:
+    - Embedding-based complexity classification
+    - Domain classification, extraction, summarization, and reasoning
+  inputs:
+    - Bounded workload text
+    - Task instructions
+    - Optional MCP context
+  outputs:
+    - Route and confidence
+    - Task-specific model output
+    - Model and hardware metadata
+  model_identity_source: Live router and agent responses
+  hardware_identity_source: Live agent and benchmark responses
+  evidence_access:
+    - Submitted workload
+    - Explicitly retrieved MCP context
+  action_authority: none
+  validation:
+    - OpenAPI and response-schema compliance
+    - Benchmark rubric
+    - Cost and hardware-path validation
+  fallback: MCP may use labeled fallback data; failed or unavailable inference must remain visibly unavailable and must not become a live claim.
+  final_decision_owner: Human evaluator
+
+story_mapping:
+  audience_question: Which model and Intel hardware path should run each enterprise AI workload?
+  stakes:
+    - A single default model hides cost, latency, and task-fit tradeoffs.
+    - Architecture claims are insufficient without live model and hardware evidence.
+  architecture_flow_ids: [routed-inference, coordinated-event]
+  live_proof_flow_ids: [routed-inference]
+  comparison: Run the same task through a consequential alternative and compare returned evidence.
+  payoff: Right-size each workload from current-session evidence rather than a universal model assumption.
+  next_journey: Choose one workload for a deeper optimization or hands-on lab after the presentation closes.

@@ -14,3 +14,9 @@ generated demo to Triforce services or industry copy.
 The story map in `demo.config.ts` is the narrative comparison point. The
 Playwright screenshots in the canonical template are the visual regression
 point at presentation, laptop, and narrow rehearsal sizes.
+
+`demo-blueprint.yaml` is the discovery comparison point. It demonstrates how
+Triforce's real runtime objects, heterogeneous inference flow, evidence,
+decision policies, and bounded LLM roles are captured before they are reduced
+into a presentation. New demos should reuse this rigor and cadence—not its
+healthcare terminology or exact operational sequence.

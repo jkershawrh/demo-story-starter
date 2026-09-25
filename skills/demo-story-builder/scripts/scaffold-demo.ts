@@ -56,5 +56,10 @@ const brief = (await readFile(briefPath, 'utf8'))
   .replace('title: Build the proof, not just the pitch', `title: ${JSON.stringify(title)}`)
 await writeFile(briefPath, brief)
 
+const blueprintPath = join(destination, 'demo-blueprint.yaml')
+const blueprint = (await readFile(blueprintPath, 'utf8'))
+  .replace('name: demo-story', `name: ${JSON.stringify(name)}`)
+await writeFile(blueprintPath, blueprint)
+
 console.log(`Created ${name} at ${destination}`)
-console.log('Next: complete story.brief.yaml, then npm install && npm run check')
+console.log('Next: complete and validate demo-blueprint.yaml, then author story.brief.yaml')

@@ -2,6 +2,8 @@
 
 Architecture is a causal explanation, not an inventory.
 
+Derive nodes and edges from approved `demo-blueprint.yaml` flows. The diagram may simplify the source, but it must not introduce a component, protocol, evidence source, or authority relationship that the blueprint does not contain.
+
 Choose the view that best supports the audience's decision:
 
 - `architecture`: a compact set of components and responsibilities.

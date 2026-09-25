@@ -6,8 +6,10 @@
     "dev": "npm --prefix template run dev",
     "build": "npm --prefix template run build",
     "test": "npm --prefix template run test",
-    "check": "npm --prefix template run check",
+    "check": "npm run validate:blueprint -- examples/triforce-reference/demo-blueprint.yaml && npm --prefix template run check",
     "scaffold": "node --experimental-strip-types skills/demo-story-builder/scripts/scaffold-demo.ts",
+    "discover": "node --experimental-strip-types skills/demo-story-builder/scripts/discover-demo.ts",
+    "validate:blueprint": "node --experimental-strip-types skills/demo-story-builder/scripts/validate-blueprint.ts",
     "install-skill": "node scripts/install-skill.mjs"
   }
 }
