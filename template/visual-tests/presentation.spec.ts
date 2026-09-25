@@ -7,7 +7,7 @@ test('opening and architecture remain visually stable', async ({ page }) => {
   await expect(page).toHaveScreenshot('architecture.png', { fullPage: true })
 })
 
-test('live journey keeps architecture and proof in one view', async ({ page }) => {
+test('live journey opens as a workload workspace with topology on demand', async ({ page }) => {
   await page.goto('/?act=2&scene=0')
   await expect(page).toHaveScreenshot('live-journey.png', { fullPage: true })
 })
