@@ -47,13 +47,20 @@ export const demoConfig: DemoConfig = {
       ], speakerPrompt: 'Narrate the deployment objects, protocols, trust boundary, and active path while it runs. Say LIVE, REHEARSAL, or OFFLINE before interpreting each result.' },
       { id: 'tradeoff', type: 'comparison', beat: 'trials', title: 'Show the decision boundary, not only the winner', columns: [{ label: 'Claim', value: 'Observable', detail: 'The proof answers the question posed by the story.', tone: 'success' }, { label: 'Limit', value: 'Explicit', detail: 'Scope, fallback state, and next validation remain visible.', tone: 'partner' }], speakerPrompt: 'Stop adding slides. Use the limitation to choose the next live or guided depth.' },
     ] },
-    { id: 'payoff', label: '03', title: 'The Handoff', scenes: [
-      { id: 'punchline', type: 'punchline', beat: 'transformation', eyebrow: 'The transformation', line1: 'The audience does not need a longer deck.', line2: 'They need the right next experience.', cta: 'Continue into proof, practice, or build →', speakerPrompt: 'End the presentation here and move into the selected environment.' },
+    { id: 'mechanisms', label: '03', title: 'Why It Works', scenes: [
+      { id: 'mechanisms', type: 'mechanisms', beat: 'trials', eyebrow: 'Why it worked', title: 'Expose the few mechanisms that make the result repeatable', body: 'Each card explains why the proof behaved as it did before the audience enters the lab.', mechanisms: [
+        { id: 'placement', label: 'Measured placement', claim: 'Route work by evidence, not assumption.', detail: 'The same request contract can select a different execution path when the condition changes.', tone: 'partner' },
+        { id: 'policy', label: 'Visible policy', claim: 'Keep the decision boundary inspectable.', detail: 'Operators can see the rule, evidence, and limitation that shaped the result.', tone: 'primary' },
+        { id: 'fallback', label: 'Honest resilience', claim: 'Degrade without disguising the source.', detail: 'Rehearsal and offline evidence remain useful while visibly distinct from a live response.', tone: 'success' },
+      ], speakerPrompt: 'Explain only the mechanisms needed to make the observed result understandable and repeatable.' },
+    ] },
+    { id: 'payoff', label: '04', title: 'Evidence & Handoff', scenes: [
+      { id: 'payoff', type: 'evidence-payoff', beat: 'transformation', eyebrow: 'What you just proved', title: 'Close with evidence from this session', adapterIds: ['demo-proof', 'demo-proof-changed'], fallbackLine: 'Run the live journey to populate this payoff', evidenceFields: [{ key: 'latency', label: 'Latest latency', suffix: 'ms' }, { key: 'throughput', label: 'Latest throughput', suffix: '/s' }, { key: 'outcome', label: 'Observed outcome' }], line1: 'The architecture did not end at the diagram.', line2: 'It produced evidence the room can inspect.', cta: 'Continue into guided practice or the lab →', speakerPrompt: 'Recap only evidence produced in this session. If proof was not run, say so and return to the live act.' },
     ] },
   ],
-  relatedStories: [
-    { title: 'Live Demonstration', duration: '5–10 minutes', question: 'Can the claim survive a second input or condition?', technology: 'Live system · Observable evidence · Honest fallback', instruction: 'Open the operator or proof workspace.' },
-    { title: 'Guided Demo', duration: '20–35 minutes', question: 'Can the audience trace the architecture and evidence?', technology: 'Instructor prompts · Guided inspection · Checkpoints', instruction: 'Follow the guided architecture and proof path.' },
-    { title: 'Hands-on Lab', duration: '60–90 minutes', question: 'Can participants extend, break, and qualify the pattern?', technology: 'Build · Failure modes · Qualification · Takeaway artifact', instruction: 'Complete the build-and-prove journey.' },
+  journeyHandoffs: [
+    { depth: 'live', title: 'Live Demonstration', duration: '5–10 minutes', question: 'Can the claim survive a second input or condition?', technology: 'Live system · Observable evidence · Honest fallback', instruction: 'Open the operator or proof workspace.' },
+    { depth: 'guided', title: 'Guided Demo', duration: '20–35 minutes', question: 'Can the audience trace architecture, proof, and mechanism?', technology: 'Instructor prompts · Guided inspection · Checkpoints', instruction: 'Repeat the same journey with participant decisions.' },
+    { depth: 'lab', title: 'Hands-on Lab', duration: '60–90 minutes', question: 'Can participants extend, break, and qualify the pattern?', technology: 'Build · Failure modes · Qualification · Takeaway artifact', instruction: 'Continue with the evidence and architecture already established.' },
   ],
 }

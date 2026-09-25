@@ -73,6 +73,22 @@ describe('SceneRenderer', () => {
     expect(scenes.length).toBeLessThanOrEqual(7)
   })
 
+  it('includes the full progressive proof arc before the lab handoff', () => {
+    expect(scenes.some((scene) => scene.type === 'guided-architecture')).toBe(true)
+    expect(scenes.some((scene) => scene.type === 'live-journey')).toBe(true)
+    expect(scenes.some((scene) => scene.type === 'comparison' || scene.type === 'scale' || scene.type === 'tradeoff')).toBe(true)
+    expect(scenes.some((scene) => scene.type === 'mechanisms')).toBe(true)
+    expect(scenes.at(-1)?.type).toBe('evidence-payoff')
+  })
+
+  it('does not claim session proof before the live journey runs', () => {
+    const configured = scenes.find((item) => item.type === 'evidence-payoff')!
+    const scene = { ...configured, adapterIds: ['proof-that-has-not-run'] }
+    render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
+    expect(screen.getByText('Run the live journey to populate this payoff')).toBeInTheDocument()
+    expect(screen.getByText('not run')).toBeInTheDocument()
+  })
+
   const architectureScenes: SceneConfig[] = [
     {
       id: 'coverage-flow', type: 'architecture-flow', beat: 'system-reveal', title: 'Request flow',

@@ -5,6 +5,7 @@ import { LiveProof } from './LiveProof'
 import { LiveJourney } from './LiveJourney'
 import { SceneFrame } from './SceneFrame'
 import { TechnicalTopology } from './TechnicalTopology'
+import { getCachedProof } from '../live/proof'
 
 const toneClass = (tone?: string) => tone ? `tone-${tone}` : ''
 
@@ -37,6 +38,24 @@ export function SceneRenderer({ scene, brand }: { scene: SceneConfig; brand: { p
   if (scene.type === 'live-proof') return <LiveProof scene={scene} />
   if (scene.type === 'live-journey') return <LiveJourney scene={scene} />
   if (scene.type === 'guided-architecture') return <GuidedArchitecture scene={scene} />
+
+  if (scene.type === 'mechanisms') {
+    return <SceneFrame scene={scene}><div className="mechanism-grid">{scene.mechanisms.map((mechanism, index) => {
+      return <div className={`mechanism-card ${toneClass(mechanism.tone)}`} key={mechanism.id}><span className="mechanism-number">{String(index + 1).padStart(2, '0')}</span><strong>{mechanism.label}</strong><em>{mechanism.claim}</em><small>{mechanism.detail}</small></div>
+    })}</div></SceneFrame>
+  }
+
+  if (scene.type === 'evidence-payoff') {
+    const proofs = scene.adapterIds.map(getCachedProof).filter((proof) => proof?.status === 'ready')
+    const latest = proofs.at(-1)
+    return <SceneFrame scene={scene}>
+      <div className="evidence-recap" data-testid="evidence-payoff">
+        <div className="evidence-status"><span className={`source-badge source-${latest?.source ?? 'rehearsal'}`}>{latest?.source ?? 'not run'}</span><strong>{proofs.length ? `${proofs.length} proof condition${proofs.length === 1 ? '' : 's'} completed` : scene.fallbackLine}</strong></div>
+        {latest?.data && <div className="journey-results">{scene.evidenceFields.map((field) => <div className="journey-result" key={field.key}><span>{field.label}</span><strong>{String(latest.data?.[field.key] ?? '—')}{field.suffix}</strong></div>)}</div>}
+        <div className="punchline"><div>{scene.line1}</div><strong>{scene.line2}</strong>{scene.cta && <span>{scene.cta}</span>}</div>
+      </div>
+    </SceneFrame>
+  }
 
   if (scene.type === 'intro') {
     return (

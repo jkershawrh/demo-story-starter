@@ -2,6 +2,8 @@
 
 A reusable Red Hat × Intel interactive presentation system derived from the Triforce demo story arc. It combines a guided hero’s-journey schema, a React/Vite presentation runtime, reusable animated scenes, honest live-data fallback states, and a Codex authoring skill.
 
+Its central pattern is **progressive proof**: story → guided causal architecture → live workflow → changed condition or scale trial → inline mechanism explanation → evidence-derived payoff → guided practice or lab. These are increasing depths of one journey, not separate experiences that restart the narrative.
+
 ## Quick start
 
 ```bash
@@ -51,6 +53,8 @@ The Codex skill accepts rough ideas, existing stories, architecture diagrams, te
 - Comparison/benchmark
 - Scale progression
 - Tradeoff/decision
+- Inline mechanism explanation
+- Evidence-derived payoff from the current browser session
 - Punchline/CTA
 - Custom React escape hatch
 
@@ -74,7 +78,9 @@ registerAdapter(createJsonAdapter({
 }))
 ```
 
-Successful responses display as `LIVE`. Failures display the fixture as `REHEARSAL`, or `OFFLINE` when the browser has no network. The runtime never labels fallback data as live and preserves the latest result for the browser session.
+Successful responses display as `LIVE`. Failures display the fixture as `REHEARSAL`, or `OFFLINE` when the browser has no network. The runtime never labels fallback data as live and preserves the latest result for the browser session. An `evidence-payoff` scene reads that state so the close reflects what the audience actually ran; if nothing ran, it says so.
+
+Quantitative demo metrics—performance, latency, throughput, scale, confidence, and cost—must come from the live infrastructure adapter during the current session. Do not place those numbers in scene configuration. Rehearsal fixtures are continuity aids, not live measurements, and retain their visible source label throughout the payoff.
 
 Keep credentials in deployment secrets or a backend proxy—never in the browser config or fixtures.
 

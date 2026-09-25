@@ -7,7 +7,7 @@ export function Finale({ config, onRestart }: { config: DemoConfig; onRestart: (
       <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
         <div className="eyebrow">The next journey</div>
         <h1>{config.cta}</h1>
-        {config.relatedStories && <div className="related-grid">{config.relatedStories.map((story) => {
+        {(config.journeyHandoffs ?? config.relatedStories) && <div className="related-grid">{(config.journeyHandoffs ?? config.relatedStories)!.map((story) => {
           const content = <><div className="journey-meta">{story.duration}</div><strong>{story.title}</strong><em>{story.question}</em><span>{story.technology}</span>{story.instruction && <small>{story.instruction}</small>}</>
           return story.href ? <a className="related-card" href={story.href} key={story.title}>{content}</a> : <div className="related-card" key={story.title}>{content}</div>
         })}</div>}

@@ -30,7 +30,18 @@ export function validateDemoConfig(config: DemoConfig): string[] {
   if (scenes.length > 7) warnings.push(`Presenter story has ${scenes.length} scenes; keep the pitch to 7 or fewer and move depth into the guided demo or lab.`)
   if (!scenes.some((scene) => scene.type === 'guided-architecture')) warnings.push('Story is missing a guided architecture reveal.')
   if (!scenes.some((scene) => scene.type === 'live-proof' || scene.type === 'live-journey')) warnings.push('Story is missing a live proof scene.')
-  if ((config.relatedStories?.length ?? 0) < 3) warnings.push('Finale must hand off to live demonstration, guided demo, and hands-on lab journeys.')
+  const handoffs = config.journeyHandoffs ?? config.relatedStories ?? []
+  if (handoffs.length < 3) warnings.push('Finale must hand off to live demonstration, guided demo, and hands-on lab journeys.')
+  if (!scenes.some((scene) => scene.type === 'mechanisms')) warnings.push('Pre-lab journey is missing a mechanism deep dive.')
+  if (!scenes.some((scene) => scene.type === 'evidence-payoff')) warnings.push('Payoff should recap evidence produced during the live journey.')
+  for (const scene of scenes) {
+    if (scene.type === 'metric' || scene.type === 'stat-grid' || scene.type === 'scale') {
+      warnings.push(`Scene "${scene.id}" contains static metrics; quantitative demo metrics must be returned by a live-proof or live-journey adapter.`)
+    }
+    if (scene.type === 'comparison' && scene.columns.some((column) => /\d/.test(column.value))) {
+      warnings.push(`Scene "${scene.id}" contains static comparison numbers; quantitative comparisons must be returned by live infrastructure.`)
+    }
+  }
 
   return warnings
 }
