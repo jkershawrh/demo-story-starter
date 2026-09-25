@@ -25,11 +25,14 @@ describe('SceneRenderer', () => {
   it('runs a guided proof through the visible architecture', async () => {
     const scene = scenes.find((item) => item.type === 'live-journey')!
     render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
+    expect(screen.getByTestId('live-workspace')).toBeInTheDocument()
+    expect(screen.queryByLabelText('Live technical deployment topology')).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Inspect technical topology' }))
     expect(screen.getByLabelText('Live technical deployment topology')).toBeInTheDocument()
     expect(screen.getByText('OpenShift namespace')).toBeInTheDocument()
     expect(screen.getByText('POST /api/proof')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: /run the live journey/i }))
-    expect(await screen.findByText('Run the first condition')).toBeInTheDocument()
+    expect((await screen.findAllByText('Run the first condition'))[0]).toBeInTheDocument()
     expect(await screen.findByRole('button', { name: /next live act/i })).toBeInTheDocument()
   })
 

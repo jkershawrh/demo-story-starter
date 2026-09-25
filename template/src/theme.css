@@ -208,6 +208,31 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .journey-controls { display: flex; justify-content: center; gap: .75rem; margin-top: 1rem; }
 .journey-controls a { text-decoration: none; }
 .technical-topology { margin: .5rem 0; }
+.scene:has(.live-workspace) > .eyebrow,
+.scene:has(.live-workspace) > h1,
+.scene:has(.live-workspace) > .lede { display: none; }
+.live-workspace { width: min(1240px, 100%); height: min(660px, calc(100vh - 118px)); margin: 0 auto; display: grid; grid-template-columns: 180px minmax(0, 1fr) 220px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-1); text-align: left; }
+.live-workspace-steps { display: flex; flex-direction: column; padding: .8rem 0; border-right: 1px solid var(--border); }
+.live-workspace-steps button { display: grid; grid-template-columns: 24px 1fr; align-items: center; gap: .5rem; min-height: 48px; padding: .55rem .7rem; color: var(--text-disabled); background: transparent; border: 0; border-left: 3px solid transparent; text-align: left; font-size: .68rem; }
+.live-workspace-steps button span { width: 22px; height: 22px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; font: 700 .58rem 'Red Hat Mono'; }
+.live-workspace-steps button.active { color: var(--text); border-left-color: var(--intel-cyan); background: var(--intel-cyan-dim); }
+.live-workspace-steps button.complete { color: var(--text-secondary); cursor: pointer; }
+.live-workspace-steps button.complete span { color: var(--success); border-color: var(--success); }
+.live-workspace-main { min-width: 0; display: flex; flex-direction: column; padding: 1.2rem; }
+.live-workspace .journey-status { justify-items: start; margin: 0; }
+.live-workspace .journey-status small, .live-workspace-context > span, .live-workspace-intake > span { color: var(--intel-cyan); font: 700 .58rem 'Red Hat Mono'; letter-spacing: .08em; }
+.live-workspace .journey-status strong { font: 700 clamp(1.5rem, 2.5vw, 2.2rem) 'Red Hat Display'; }
+.live-workspace .journey-status .source-badge { justify-self: end; }
+.live-workspace-intake { flex: 1; display: grid; align-content: center; gap: .6rem; margin: 1rem 0; padding: 1.2rem; border-top: 3px solid var(--intel-cyan); background: var(--surface-2); }
+.live-workspace-intake strong { font-size: 1.25rem; }
+.live-workspace-intake small { color: var(--text-dim); }
+.live-workspace .journey-results { margin-block: auto 1rem; width: 100%; }
+.live-workspace .journey-controls { margin-top: auto; justify-content: flex-end; }
+.live-workspace-context { display: flex; flex-direction: column; gap: .5rem; padding: 1rem; border-left: 1px solid var(--border); background: #191919; }
+.live-workspace-context p, .live-workspace-context small { color: var(--text-dim); font-size: .68rem; line-height: 1.45; }
+.live-workspace-context small { margin-top: auto; padding: .7rem; border-left: 2px solid var(--intel-cyan); background: var(--surface-2); }
+.live-topology-drawer { position: fixed; inset: 58px 0 0; z-index: 20; display: grid; align-content: center; padding: 3rem; background: rgba(21, 21, 21, .97); }
+.live-topology-drawer .technical-topology { width: min(1100px, 100%); margin: auto; }
 .topology-legend { display: flex; justify-content: center; gap: 1rem; margin-bottom: .5rem; color: var(--text-dim); font: .6rem 'Red Hat Mono'; }
 .topology-legend span { display: flex; align-items: center; gap: .3rem; }
 .topology-legend i { width: 16px; height: 3px; display: inline-block; }
@@ -287,6 +312,15 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
   .live-node { width: min(320px, 80vw); min-height: 68px; }
   .live-edge { transform: rotate(90deg); height: 24px; }
   .journey-controls { flex-wrap: wrap; }
+  .scene:has(.live-workspace) > .eyebrow,
+  .scene:has(.live-workspace) > h1,
+  .scene:has(.live-workspace) > .lede { display: block; }
+  .live-workspace { height: auto; grid-template-columns: 1fr; overflow: visible; }
+  .live-workspace-steps { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+  .live-workspace-steps button { min-width: 150px; border-left: 0; border-bottom: 3px solid transparent; }
+  .live-workspace-main { min-height: 520px; }
+  .live-workspace-context { border-left: 0; border-top: 1px solid var(--border); }
+  .live-topology-drawer { overflow: auto; padding: 1rem; }
   .topology-legend { flex-wrap: wrap; justify-content: flex-start; }
   .topology-graph { display: flex; flex-direction: column; align-items: stretch; }
   .topology-boundary { margin-top: 1rem; }
