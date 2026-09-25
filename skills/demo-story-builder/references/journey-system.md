@@ -15,7 +15,7 @@ environment, but they do not serve the same audience behavior.
 Use red, amber, and green status during authoring:
 
 - **Presentation length:** red above ten scenes; amber at eight to ten; green at seven or fewer.
-- **Architecture:** red for a static inventory; amber for unexplained animation; green when each reveal answers an audience question and identifies responsibility and boundary.
+- **Architecture:** red for a static inventory or generic boxes; amber for unexplained animation or technically unlabeled paths; green when each reveal answers an audience question and the diagram names real runtime objects, protocols, boundaries, responsibility, and authority.
 - **Proof:** red when fixtures appear live; amber when fallback is honest but disconnected; green when source state is explicit and proof leads into a workspace.
 - **Architecture-to-proof continuity:** red when architecture disappears before the demo; amber when proof is shown beside a static diagram; green when live steps activate the same architecture, pause on returned evidence, and visibly change under a second input or condition.
 - **Guided experience:** red when no instructor path exists; amber when commands and diagrams are disconnected; green when the guide connects UI, evidence, architecture, and platform resources.

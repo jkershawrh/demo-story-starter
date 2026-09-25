@@ -122,10 +122,18 @@ export interface LiveJourneyScene extends BaseScene {
     detail: string
     adapterId: string
     activeNode: number
+    activeNodeIds?: string[]
     resultFields: Array<{ key: string; label: string; suffix?: string }>
   }>
   cta: string
   workspace?: { label: string; href: string }
+  technicalTopology?: {
+    boundary: { label: string; detail: string }
+    entry: { id: string; kind: string; label: string; detail: string; endpoint?: string }
+    primaryPath: Array<{ id: string; kind: string; label: string; detail: string; endpoint?: string; edgeLabel?: string }>
+    supportPath: Array<{ id: string; kind: string; label: string; detail: string; endpoint?: string; edgeLabel?: string }>
+    optionalPath?: { id: string; kind: string; label: string; detail: string; endpoint?: string; edgeLabel?: string }
+  }
 }
 
 export interface ComparisonScene extends BaseScene {

@@ -3,6 +3,7 @@ import { getAdapter } from '../live/adapters'
 import { runProof } from '../live/proof'
 import type { LiveJourneyScene, ProofState } from '../types'
 import { SceneFrame } from './SceneFrame'
+import { TechnicalTopology } from './TechnicalTopology'
 
 export function LiveJourney({ scene }: { scene: LiveJourneyScene }) {
   const [stepIndex, setStepIndex] = useState(-1)
@@ -33,14 +34,14 @@ export function LiveJourney({ scene }: { scene: LiveJourneyScene }) {
       <strong>{step?.title ?? 'Ready to trace the live system'}</strong>
       <span>{step?.detail ?? 'Each proof step activates the architecture that produced its evidence.'}</span>
     </div>
-    <div className="live-architecture" aria-label="Live architecture journey">
+    {scene.technicalTopology ? <TechnicalTopology topology={scene.technicalTopology} activeIds={step?.activeNodeIds ?? []} /> : <div className="live-architecture" aria-label="Live architecture journey">
       {scene.nodes.map((node, index) => <div className="live-node-wrap" key={node.id}>
         <div className={`live-node ${node.tone ? `tone-${node.tone}` : ''} ${step && index <= step.activeNode ? 'done' : ''} ${step?.activeNode === index ? 'active' : ''}`}>
           <strong>{node.label}</strong>{node.detail && <span>{node.detail}</span>}
         </div>
         {index < scene.nodes.length - 1 && <div className={`live-edge ${step && index < step.activeNode ? 'done' : ''}`}>→</div>}
       </div>)}
-    </div>
+    </div>}
     {state.status === 'ready' && state.data && step && <div className="journey-results">
       {step.resultFields.map((field) => <div className="journey-result" key={field.key}><span>{field.label}</span><strong>{String(state.data?.[field.key] ?? '—')}{field.suffix}</strong></div>)}
     </div>}

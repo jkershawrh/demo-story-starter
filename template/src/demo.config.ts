@@ -24,10 +24,19 @@ export const demoConfig: DemoConfig = {
         { id: 'compute', label: 'Intel compute', detail: 'measured execution', tone: 'partner' },
         { id: 'adapter', label: 'Proof adapter', detail: 'typed evidence', tone: 'success' },
         { id: 'decision', label: 'Human decision', detail: 'authority stays visible', tone: 'primary' },
-      ], steps: [
-        { id: 'baseline', title: 'Run the first condition', detail: 'The live response activates the system path and exposes its source state.', adapterId: 'demo-proof', activeNode: 3, resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }] },
-        { id: 'changed', title: 'Change the evidence', detail: 'A second condition must produce a distinguishable result through the same architecture.', adapterId: 'demo-proof-changed', activeNode: 4, resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }] },
-      ], speakerPrompt: 'Narrate the architecture while it runs. Say LIVE, REHEARSAL, or OFFLINE before interpreting each result.' },
+      ], technicalTopology: { boundary: { label: 'OpenShift namespace', detail: 'application deployment boundary' }, entry: { id: 'browser', kind: 'operator', label: 'Presenter browser', detail: 'story + live workspace' }, primaryPath: [
+        { id: 'route', kind: 'route', label: 'Route / ingress', detail: 'TLS edge and public entry', endpoint: '443', edgeLabel: 'HTTPS' },
+        { id: 'service', kind: 'service', label: 'Application Service', detail: 'stable cluster endpoint', endpoint: ':8080', edgeLabel: 'HTTP' },
+        { id: 'runtime', kind: 'deployment', label: 'Application runtime', detail: 'UI, API, and orchestration', endpoint: 'POST /api/proof', edgeLabel: 'selects pod' },
+        { id: 'proof-service', kind: 'service', label: 'Proof Service', detail: 'bounded internal endpoint', endpoint: ':8090', edgeLabel: 'typed API' },
+      ], supportPath: [
+        { id: 'evidence', kind: 'data', label: 'Approved evidence', detail: 'versioned fixtures or live source', edgeLabel: 'retrieval' },
+        { id: 'policy', kind: 'policy', label: 'Decision policy', detail: 'validate, compare, or abstain', edgeLabel: 'evaluate' },
+        { id: 'human', kind: 'authority', label: 'Human decision', detail: 'authority remains visible', edgeLabel: 'proposal' },
+      ], optionalPath: { id: 'optional', kind: 'external', label: 'Optional integration', detail: 'never implied to be authoritative', edgeLabel: 'bounded egress' } }, steps: [
+        { id: 'baseline', title: 'Run the first condition', detail: 'The live response activates the system path and exposes its source state.', adapterId: 'demo-proof', activeNode: 3, activeNodeIds: ['browser', 'route', 'service', 'runtime', 'proof-service', 'evidence', 'policy'], resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }] },
+        { id: 'changed', title: 'Change the evidence', detail: 'A second condition must produce a distinguishable result through the same architecture.', adapterId: 'demo-proof-changed', activeNode: 4, activeNodeIds: ['browser', 'route', 'service', 'runtime', 'proof-service', 'evidence', 'policy', 'human'], resultFields: [{ key: 'latency', label: 'Latency', suffix: 'ms' }, { key: 'throughput', label: 'Throughput', suffix: '/s' }, { key: 'outcome', label: 'Outcome' }] },
+      ], speakerPrompt: 'Narrate the deployment objects, protocols, trust boundary, and active path while it runs. Say LIVE, REHEARSAL, or OFFLINE before interpreting each result.' },
       { id: 'tradeoff', type: 'comparison', beat: 'trials', title: 'Show the decision boundary, not only the winner', columns: [{ label: 'Claim', value: 'Observable', detail: 'The proof answers the question posed by the story.', tone: 'success' }, { label: 'Limit', value: 'Explicit', detail: 'Scope, fallback state, and next validation remain visible.', tone: 'partner' }], speakerPrompt: 'Stop adding slides. Use the limitation to choose the next live or guided depth.' },
     ] },
     { id: 'payoff', label: '03', title: 'The Handoff', scenes: [

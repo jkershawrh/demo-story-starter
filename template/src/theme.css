@@ -195,6 +195,34 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
 .journey-result strong { color: var(--intel-cyan); overflow-wrap: anywhere; }
 .journey-controls { display: flex; justify-content: center; gap: .75rem; margin-top: 1rem; }
 .journey-controls a { text-decoration: none; }
+.technical-topology { margin: .5rem 0; }
+.topology-legend { display: flex; justify-content: center; gap: 1rem; margin-bottom: .5rem; color: var(--text-dim); font: .6rem 'Red Hat Mono'; }
+.topology-legend span { display: flex; align-items: center; gap: .3rem; }
+.topology-legend i { width: 16px; height: 3px; display: inline-block; }
+.legend-live { background: var(--success); }
+.legend-boundary { border-top: 2px dashed var(--rh-red); }
+.legend-optional { border-top: 2px dashed var(--text-disabled); }
+.topology-graph { display: grid; grid-template-columns: 130px 1fr; gap: .65rem; align-items: center; text-align: left; }
+.topology-boundary { position: relative; padding: 1.25rem .7rem .7rem; border: 2px dashed var(--rh-red); border-radius: var(--radius-md); }
+.topology-boundary-title { position: absolute; top: -.65rem; left: 1rem; display: flex; gap: .5rem; padding: .1rem .5rem; background: var(--bg); font: .62rem 'Red Hat Mono'; }
+.topology-boundary-title strong { color: var(--rh-red); text-transform: uppercase; }
+.topology-boundary-title span { color: var(--text-dim); }
+.topology-path { display: flex; align-items: center; justify-content: center; }
+.topology-support { margin-top: .55rem; padding-top: .55rem; border-top: 1px solid var(--border); }
+.topology-path-item { display: flex; align-items: center; }
+.topology-node { width: 132px; min-height: 70px; display: flex; flex-direction: column; justify-content: center; gap: .15rem; padding: .5rem; color: var(--text-disabled); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-1); }
+.topology-node strong { font-size: .76rem; line-height: 1.15; }
+.topology-node small { font-size: .59rem; line-height: 1.2; }
+.topology-node code { color: var(--text-dim); font: .55rem 'Red Hat Mono'; }
+.topology-kind { color: var(--text-disabled); font: 700 .5rem 'Red Hat Mono'; text-transform: uppercase; }
+.topology-node.active { color: var(--text); border-color: var(--intel-cyan); background: var(--intel-cyan-dim); }
+.topology-node.active .topology-kind { color: var(--intel-cyan); }
+.topology-edge { width: 44px; display: grid; justify-items: center; color: var(--text-disabled); text-align: center; }
+.topology-edge span { font: .48rem 'Red Hat Mono'; line-height: 1.1; }
+.topology-edge.active { color: var(--success); }
+.topology-edge.dashed { opacity: .6; }
+.topology-optional { grid-column: 2; display: flex; justify-content: flex-end; align-items: center; opacity: .72; }
+.topology-optional .topology-node { width: 190px; min-height: 52px; }
 
 .finale { cursor: default; }
 .related-card { display: grid; gap: .65rem; text-decoration: none; border-left: 3px solid var(--intel-cyan); }
@@ -233,6 +261,13 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
   .live-node { width: min(320px, 80vw); min-height: 68px; }
   .live-edge { transform: rotate(90deg); height: 24px; }
   .journey-controls { flex-wrap: wrap; }
+  .topology-legend { flex-wrap: wrap; justify-content: flex-start; }
+  .topology-graph { display: flex; flex-direction: column; align-items: stretch; }
+  .topology-boundary { margin-top: 1rem; }
+  .topology-path, .topology-path-item, .topology-optional { flex-direction: column; }
+  .topology-node, .topology-optional .topology-node { width: 100%; }
+  .topology-edge { width: auto; height: 28px; transform: rotate(90deg); }
+  .topology-edge span { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
