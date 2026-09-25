@@ -12,6 +12,12 @@ export function LiveJourney({ scene }: { scene: LiveJourneyScene }) {
   const step = stepIndex >= 0 ? scene.steps[stepIndex] : undefined
   const complete = stepIndex === scene.steps.length - 1 && state.status === 'ready'
 
+  const advance = () => {
+    if (state.status === 'loading' || complete) return
+    if (stepIndex < 0) void runStep(0)
+    else if (state.status !== 'error') void runStep(stepIndex + 1)
+  }
+
   useEffect(() => () => controller.current?.abort(), [])
 
   async function runStep(index: number) {
@@ -28,7 +34,7 @@ export function LiveJourney({ scene }: { scene: LiveJourneyScene }) {
     setState(await runProof(adapter, controller.current.signal))
   }
 
-  return <SceneFrame scene={scene}>
+  return <SceneFrame scene={scene}><div className="live-click-stage" data-testid="live-click-stage" onClick={(event) => { event.stopPropagation(); if (!(event.target as HTMLElement).closest('button, a')) advance() }}>
     <div className="journey-status">
       {state.source && <span className={`source-badge source-${state.source}`}>{state.source}</span>}
       <strong>{step?.title ?? 'Ready to trace the live system'}</strong>
@@ -54,5 +60,6 @@ export function LiveJourney({ scene }: { scene: LiveJourneyScene }) {
       {complete && <button className="button button-secondary" onClick={() => { setStepIndex(-1); setState({ status: 'idle' }) }}>Replay</button>}
       {complete && scene.workspace && <a className="button button-primary" href={scene.workspace.href}>{scene.workspace.label} →</a>}
     </div>
-  </SceneFrame>
+    {state.status !== 'loading' && !complete && <div className="click-hint">Click anywhere to {stepIndex < 0 ? 'run the live proof' : 'run the next condition'} →</div>}
+  </div></SceneFrame>
 }

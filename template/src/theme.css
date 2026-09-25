@@ -74,8 +74,8 @@ a { color: inherit; }
 .progress button.done { background: var(--success); }
 .progress button.active { background: var(--intel-cyan); box-shadow: 0 0 10px rgba(0, 174, 239, .5); }
 
-.stage { min-height: calc(100vh - 58px); display: grid; place-items: center; padding: clamp(2rem, 5vw, 5rem); cursor: pointer; }
-.scene { width: min(1100px, 100%); min-height: min(66vh, 680px); display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.stage { height: calc(100vh - 58px); overflow: hidden; display: grid; place-items: center; padding: clamp(1.25rem, 3.5vw, 3.5rem); cursor: pointer; }
+.scene { width: min(1100px, 100%); max-height: 100%; min-height: min(66vh, 680px); display: flex; flex-direction: column; justify-content: center; text-align: center; }
 .scene h1 { font: 700 clamp(2rem, 4vw, 4rem)/1.08 'Red Hat Display'; letter-spacing: -.035em; margin: .4rem auto 1rem; max-width: 950px; }
 .scene .lede { color: var(--text-secondary); font-size: clamp(1rem, 1.6vw, 1.25rem); max-width: 760px; margin: 0 auto 2rem; }
 .eyebrow { color: var(--intel-cyan); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
@@ -84,6 +84,8 @@ a { color: inherit; }
 .scene-progress { position: fixed; right: 1.4rem; bottom: 1rem; color: var(--text-disabled); font: .72rem 'Red Hat Mono'; }
 .presenter-prompt { position: fixed; z-index: 30; left: 1rem; bottom: 1rem; width: min(560px, calc(100vw - 2rem)); display: grid; gap: .4rem; padding: .9rem 1rem; border: 1px solid var(--intel-cyan); border-radius: var(--radius-sm); background: rgba(21, 21, 21, .96); color: var(--text-secondary); font-size: .85rem; }
 .presenter-prompt strong { color: var(--intel-cyan); font: 700 .68rem 'Red Hat Mono'; letter-spacing: .1em; text-transform: uppercase; }
+.live-click-stage { display: grid; gap: var(--space-3); }
+.click-hint { color: var(--text-disabled); font: .7rem 'Red Hat Mono'; text-align: center; }
 
 .hero-metric { font: 700 clamp(4rem, 12vw, 9rem)/1 'Red Hat Mono'; margin-top: 1rem; }
 .hero-label { color: var(--text-secondary); font-size: clamp(1.2rem, 2.5vw, 2rem); max-width: 800px; margin: 1rem auto; }
@@ -258,7 +260,7 @@ blockquote { font: 500 clamp(1.8rem, 4vw, 3.3rem)/1.28 'Red Hat Display'; margin
   .presenter-controls > button { width: 24px; height: 28px; padding: 0; font-size: .95rem; }
   .progress { gap: .2rem; }
   .progress button { width: 11px; }
-  .stage { padding: 1.5rem 1rem 3rem; }
+  .stage { height: auto; min-height: calc(100vh - 58px); overflow: visible; padding: 1.5rem 1rem 3rem; }
   .scene { min-height: 72vh; }
   .reframe { grid-template-columns: 1fr; gap: var(--space-2); }
   .reframe-arrow { transform: rotate(90deg); }

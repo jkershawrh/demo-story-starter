@@ -28,7 +28,8 @@ Create a new standalone presentation from the canonical `template/` in this repo
 10. For each live scene, add a typed adapter and a representative checked-in fixture. Fallback results must remain visibly labeled `REHEARSAL` or `OFFLINE`. When proof requires multiple conditions or services, use `live-journey` so returned evidence activates the same architecture revealed in the story. Follow it with a changed condition, concise inline mechanism explanation, and `evidence-payoff`; the payoff must consume the current session's proof state.
 11. Use a custom React scene only when the catalog cannot express the proof clearly.
 12. Run `npm run check`. When a browser is available, run `npx playwright install chromium` once and then `npm run test:visual`.
-13. Deliver the story brief, journey acceptance matrix, and rehearsal checklist covering endpoint health, fallback labels, fullscreen, presenter prompts, keyboard/touch navigation, 1920×1080 layout, journey handoffs, and offline assets.
+13. Visually rehearse the built experience at 1920×1080 and 1440×900. Click through every internal reveal—not only the top-level acts—and run every live condition. Reject any desktop scene that scrolls, any live result that replaces earlier evidence instead of building the case, and any architecture view that reveals boxes without first earning them through an audience question.
+14. Deliver the story brief, journey acceptance matrix, and rehearsal checklist covering endpoint health, fallback labels, fullscreen, presenter prompts, keyboard/touch navigation, 1920×1080 layout, journey handoffs, and offline assets.
 
 ## Non-negotiable constraints
 
@@ -41,3 +42,5 @@ Create a new standalone presentation from the canonical `template/` in this repo
 - Never turn a repository inventory into a component tour. Every included box must advance the story or validate the claim.
 - Keep the presenter story to 5–7 minutes and no more than seven top-level scenes unless the user explicitly requires a different format.
 - Treat presentation, live demonstration, guided demo, and hands-on lab as progressive depths of one journey. Preserve architecture, evidence, and source state between them.
+- Match the Triforce cadence: one sparse claim per opening beat; challenge then technical answer in architecture; live infrastructure responses accumulated into an inspectable evidence case; a payoff populated only from the current session.
+- Desktop presentation scenes must fit inside one viewport without page scrolling. Narrow rehearsal views may scroll.
