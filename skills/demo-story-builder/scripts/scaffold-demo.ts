@@ -48,7 +48,7 @@ const configPath = join(destination, 'src/demo.config.ts')
 const config = (await readFile(configPath, 'utf8'))
   .replace("id: 'enterprise-ai-proof'", `id: '${name}'`)
   .replace("title: 'Build the proof, not just the pitch'", `title: ${JSON.stringify(title)}`)
-  .replace("subtitle: 'A reusable Red Hat × Intel live-demo story'", `subtitle: ${JSON.stringify(subtitle)}`)
+  .replace("subtitle: 'A reusable Red Hat × Intel live-demo journey'", `subtitle: ${JSON.stringify(subtitle)}`)
 await writeFile(configPath, config)
 
 const briefPath = join(destination, 'story.brief.yaml')

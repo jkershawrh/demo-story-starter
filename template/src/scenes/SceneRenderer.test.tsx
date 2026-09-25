@@ -46,6 +46,18 @@ describe('SceneRenderer', () => {
     expect(screen.getByText('Custom proof scene')).toBeInTheDocument()
   })
 
+  it('guides architecture as audience questions and revealed answers', async () => {
+    const scene = scenes.find((item) => item.type === 'guided-architecture')!
+    render(<SceneRenderer scene={scene} brand={demoConfig.brand} />)
+    expect(screen.getByText('What enters the system?')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Reveal next boundary' }))
+    expect(await screen.findByText('Where does the workload run and remain governable?')).toBeInTheDocument()
+  })
+
+  it('keeps the presenter pitch at seven scenes or fewer', () => {
+    expect(scenes.length).toBeLessThanOrEqual(7)
+  })
+
   const architectureScenes: SceneConfig[] = [
     {
       id: 'coverage-flow', type: 'architecture-flow', beat: 'system-reveal', title: 'Request flow',

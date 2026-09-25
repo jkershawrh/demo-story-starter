@@ -13,9 +13,9 @@ describe('presentation controls', () => {
   })
 
   it('supports deep links', () => {
-    window.history.replaceState(null, '', '/?act=1&scene=1')
+    window.history.replaceState(null, '', '/?act=1&scene=0')
     render(<App />)
-    expect(screen.getByText('The audience follows a causal chain')).toBeInTheDocument()
+    expect(screen.getByText('Reveal only what the audience needs to believe')).toBeInTheDocument()
   })
 
   it('restarts from the brand control', () => {
@@ -31,5 +31,12 @@ describe('presentation controls', () => {
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: 'Toggle fullscreen' }))
     expect(document.documentElement.requestFullscreen).toHaveBeenCalled()
+  })
+
+  it('shows presenter guidance on demand', () => {
+    window.history.replaceState(null, '', '/?act=0&scene=0')
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: 'Toggle presenter prompt' }))
+    expect(screen.getByText(/Start with the audience reality/)).toBeInTheDocument()
   })
 })

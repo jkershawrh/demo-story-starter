@@ -12,4 +12,4 @@ Use the beats as narrative guardrails, not a mandatory slide count.
 8. **Transformation:** State the new capability or decision in one memorable line.
 9. **Next journey:** Give the audience a concrete next action or adjacent story.
 
-The validator warns when stakes, proof, or transformation are absent. A 15-minute demo normally uses 4–6 acts and 8–14 scenes. Prefer one idea per scene.
+The validator warns when stakes, proof, transformation, guided architecture, live proof, or the three journey handoffs are absent. The default presenter story is 5–7 minutes, uses 3–4 acts, and contains no more than seven top-level scenes. Put comparison depth in the live workspace, explanation depth in the guided demo, and construction depth in the lab. Prefer one idea per scene.

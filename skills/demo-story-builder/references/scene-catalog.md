@@ -6,6 +6,7 @@
 - `stat-grid`: Two to four related metrics after introducing them individually.
 - `reframe`: Explicit before → after mental-model change.
 - `architecture`: Three to six nodes explaining the mechanism.
+- `guided-architecture`: Three to six audience questions that reveal one component, responsibility, and boundary at a time. Prefer this for the primary architecture act.
 - `architecture-flow`: A causal request or data path with labeled transitions.
 - `architecture-layers`: Responsibilities grouped by platform or abstraction layer.
 - `architecture-compare`: Current and proposed structures side by side.

@@ -10,7 +10,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`. Click the stage, use Space/Right Arrow to advance, Left Arrow to go back, Home to restart, or `F` to enter fullscreen.
+Open `http://localhost:5173`. Click the stage, use Space/Right Arrow to advance, Left Arrow to go back, Home to restart, `P` for presenter prompts, or `F` to enter fullscreen.
 
 ## Create a new demo
 
@@ -40,6 +40,7 @@ The Codex skill accepts rough ideas, existing stories, architecture diagrams, te
 - Statistic grid
 - Problem/reframe
 - Architecture reveal
+- Guided question-and-answer architecture reveal
 - Request/data-flow architecture
 - Layered architecture
 - Before/after architecture
@@ -53,7 +54,7 @@ The Codex skill accepts rough ideas, existing stories, architecture diagrams, te
 - Punchline/CTA
 - Custom React escape hatch
 
-Configuration validation warns when stakes, proof, or transformation are missing.
+Configuration validation warns when stakes, proof, transformation, guided architecture, live proof, or explicit live-demo/guided-demo/lab handoffs are missing. By default, keep the presenter story to 5–7 minutes and no more than seven scenes; move deeper comparison and construction into the connected experiences.
 
 `story.brief.yaml` is the checkpoint between source material and implementation. It records the audience decision, narrative tension, architecture elements, consequential assumptions, story beats, live systems, and an evidence classification for every material claim. Keep it with the generated demo so future revisions can distinguish proven behavior from intended behavior.
 

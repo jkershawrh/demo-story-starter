@@ -3,7 +3,7 @@ presentation:
   title: Build the proof, not just the pitch
   audience: Technical and business decision makers
   desired_decision: Approve a measured Red Hat and Intel proof of value
-  duration_minutes: 15
+  duration_minutes: 7
   core_tension: AI ambition is moving faster than operational confidence
   cta: Choose one workload and prove it on the target platform
 
@@ -40,4 +40,9 @@ evidence:
     treatment: Show with a REHEARSAL badge until the live endpoint succeeds.
 
 live_systems: []
+journey:
+  presentation: 5–7 minute decision story with no more than seven scenes
+  live_demonstration: 5–10 minute proof in the operator or system workspace
+  guided_demo: 20–35 minute instructor-led architecture and evidence trace
+  hands_on_lab: 60–90 minute build, failure, qualification, and takeaway artifact
 open_questions: []
