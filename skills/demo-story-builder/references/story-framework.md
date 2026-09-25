@@ -21,6 +21,7 @@ The validator warns when stakes, proof, transformation, guided architecture, liv
 - Make architecture conversational: show the challenge first, then reveal the component, boundary, or mechanism that answers it. Keep completed answers visible as a compact progress trail.
 - Let live proof reuse the same conceptual architecture, but add the deployed topology and returned measurements only when the request runs.
 - Step through that deployed topology one meaningful boundary at a time. Pair the highlighted path with a changing plain-language explanation and the metric, source state, or decision generated at that boundary.
+- Use separate visual lanes for agent orchestration, workload/data movement, and LLM participation when all three exist. Never imply an LLM ran when the live response says it was absent, skipped, rejected, or unavailable.
 - When proof has multiple conditions, preserve every result on screen so the audience can compare the evidence that changed the diagnosis.
 - Populate the payoff from evidence collected in the current browser session. Never substitute authored numbers for an unrun proof.
 - At desktop presentation sizes, every scene and every internal reveal must fit between the sticky header and the viewport bottom without page scrolling.

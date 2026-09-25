@@ -45,4 +45,5 @@ Create a new standalone presentation from the canonical `template/` in this repo
 - Match the Triforce cadence: one sparse claim per opening beat; challenge then technical answer in architecture; live infrastructure responses accumulated into an inspectable evidence case; a payoff populated only from the current session.
 - Desktop presentation scenes must fit inside one viewport without page scrolling. Narrow rehearsal views may scroll.
 - A live topology is a narrated path, not a static diagram. Advance one meaningful boundary per click; at every step show what is happening, why that boundary matters, and the live measurement or decision produced there.
+- For agentic demos, distinguish the agent journey, workload/data flow, and LLM role. Show whether the LLM actually participated, its configured identity when available, and the exact boundary on its evidence and action authority.
 - End with one deliberate guided handoff and an explicit `Close presentation` control. Do not replace a close with a menu of competing demo depths.
