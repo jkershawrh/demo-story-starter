@@ -1,0 +1,115 @@
+schema_version: demo-story.redhat-intel.com/launchpad-handoff/v1
+factory_receipt:
+  identity:
+    catalog_item_id: example-candidate
+    display_name: "Intel AI 301: Example Candidate"
+    proposed_track: agentic_ai
+    proposed_learning_level: "301"
+  authority:
+    orderable: false
+    certified: false
+    promotion_eligible: false
+    may_modify_launchpad_catalog: false
+    may_provision: false
+    may_publish: false
+  presentation_source:
+    repository: "https://example.invalid/workload.git"
+    revision: "0000000000000000000000000000000000000000"
+    tree_dirty: false
+  artifacts:
+    workload:
+      image: registry.example.invalid/workload@sha256:0000000000000000000000000000000000000000000000000000000000000000
+      architecture: linux/amd64
+      source_repository: "https://example.invalid/workload.git"
+      source_revision: "0000000000000000000000000000000000000000"
+      release_receipt: {path: evidence/workload-artifact-release.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000"}
+    presentation:
+      image: registry.example.invalid/presentation@sha256:0000000000000000000000000000000000000000000000000000000000000000
+      architecture: linux/amd64
+      source_repository: "https://example.invalid/workload.git"
+      source_revision: "0000000000000000000000000000000000000000"
+      release_receipt: {path: evidence/presentation-artifact-release.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000"}
+    showroom_content:
+      repository: "https://example.invalid/workload.git"
+      revision: "0000000000000000000000000000000000000000"
+      bundle_digest: "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  factory_evidence:
+    development_journey: {path: evidence/factory-development-journey.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000"}
+    presentation_verification: {path: evidence/presentation-verification.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000"}
+    zero_residue: {path: evidence/factory-zero-residue.json, sha256: "0000000000000000000000000000000000000000000000000000000000000000"}
+  contracts:
+    demo_blueprint: demo-blueprint.yaml
+    story_brief: story.brief.yaml
+    validation_matrix: tests/validation_matrix.yaml
+    claim_registry: tests/claim_registry.yaml
+    benchmark_rubric: tests/benchmark_rubric.yaml
+  known_blockers:
+    - Launchpad source approval, trusted render, artifact review, live seat certification, and promotion remain required.
+proposed_launchpad_intake:
+  api_version: launchpad.redhat.com/v1alpha1
+  catalog:
+    catalog_item_id: example-candidate
+    display_name: "Intel AI 301: Example Candidate"
+    description: "Example factory candidate awaiting independent Launchpad discovery and review."
+    category: guided_build
+    version: 0.1.0
+    status: draft
+  learning:
+    learning_level: "301"
+    learning_stage: Engineer
+    experience_type: system_engineering
+    prerequisites: [intel-xeon6-agent-201]
+    recommended_next_items: []
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    returns_to: null
+    shared_blueprint: red-hat-intel-agentic-v1
+    solution_family: agentic_ai
+  sources:
+    showroom: {repo_url: "https://example.invalid/workload.git", revision: "0000000000000000000000000000000000000000", playbook: site.yml, start_path: showroom}
+    workload: {repo_url: "https://example.invalid/workload.git", revision: "0000000000000000000000000000000000000000", deploy_path: chart}
+  runtime:
+    deployment_type: helm
+    deployment_class: shared_namespace
+    deployment_scope: participant_namespace
+    supported_architectures: [linux/amd64]
+    supported_openshift_versions: [review-required]
+    required_operators: []
+    required_capabilities: [openshift, showroom, model_endpoint]
+    required_models: [example-model]
+    exposure_policy: internal
+    ingress: participant-route
+    egress: model-endpoint-only
+    cluster_scoped_resources: false
+    cleanup_owner: launchpad-workshop-reclaim
+    workload:
+      helm_values:
+        workload_image: registry.example.invalid/workload@sha256:0000000000000000000000000000000000000000000000000000000000000000
+        presentation_image: registry.example.invalid/presentation@sha256:0000000000000000000000000000000000000000000000000000000000000000
+        presentation_enabled: true
+      runtime_secret_name: example-model-runtime
+      runtime_secret_value_path: model.existingSecret
+      runtime_secret_sources: {endpoint: model_endpoint, name: requested_model, api-key: maas_api_key}
+    resources:
+      steady_per_seat: {cpu_millicores: 500, memory_mib: 1024, pods: 3, storage_gib: 2}
+      peak_per_seat: {cpu_millicores: 750, memory_mib: 1280, pods: 4}
+      workshop_shared: {cpu_millicores: 0, memory_mib: 0, pods: 0, storage_gib: 0}
+      provisioning_concurrency: 1
+      observed_largest_run: 1
+      safety_margin_percent: 20
+    tabs:
+      - {id: story, title: Story, source: workload.route.ui, path: /story/}
+      - {id: guide, title: Lab Guide, source: showroom.guide}
+      - {id: terminal, title: Terminal, source: showroom.terminal}
+      - {id: workspace, title: Workspace, source: workload.route.ui, path: /}
+      - {id: openshift-console, title: OpenShift Console, source: cluster.console_url}
+    readiness_checks: [pod-ready, route-accessible, inference-health, complete-journey]
+  certification_proposal:
+    stage: factory-development-verified
+    max_workshop_seats: 1
+    promotion_sequence: [1, 5, 25]
+    proof_contract_draft: handoff/catalog-certification.proposed.yaml
+    launchpad_evidence_required: [trusted-render-review, artifact-and-destination-qualification, one-seat-certification, five-seat-certification, twenty-five-seat-certification, reclaim-zero-residue]
+  requested_pipeline_actions: [approve_source, run_discovery]
+  subsequent_independent_gates: [generate_draft, trusted_render_review, artifact_review, run_one_seat_certification, request_review, scale_certification, promote]
