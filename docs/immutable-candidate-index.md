@@ -17,6 +17,17 @@ certified seats and grants no provisioning, promotion, or publication authority.
   Sovereign, or Virtualization + AI. It is not a numbered lab or a certification
   result.
 
+### AI on Intel Xeon — Start Where the Workload Fits
+
+- Source: `96804fb7717f3ef65c64501437b7cc57752251bc`
+- Presentation: `ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:86ac164c2fdb0b6d13f64f897c2b47dfb7b13a5f4821cc3d847d481fd6233ba5`
+- Proof service: `ghcr.io/jkershawrh/intel-xeon-ai-sales-proof-service@sha256:50f9f80d6a430ba906438477288e5edab92ee896f0763f487381cf5fd5b66213`
+- State: signed workload-placement sales entry with guided architecture and a
+  bounded two-condition inference proof. It distinguishes `OBSERVED`,
+  `DECLARED`, and `UNVERIFIED` hardware evidence and makes no static
+  performance, capacity, economics, certification, or ROI claim. It hands the
+  audience into CPU Inference 101 or Agentic 201.
+
 ### Governed Agentic AI — Earn Trust Before Authority
 
 - Source: `c1365429d57ce128cf9ecfa3b231508698d09e4d`
