@@ -179,6 +179,8 @@ export interface LiveProofScene extends BaseScene {
 
 export interface LiveJourneyScene extends BaseScene {
   type: 'live-journey'
+  prompt?: { label: string; title: string; detail: string }
+  context?: { label: string; title: string; body: string; footnote?: string }
   nodes: Array<{ id: string; label: string; detail?: string; tone?: 'primary' | 'partner' | 'success' }>
   steps: Array<{
     id: string

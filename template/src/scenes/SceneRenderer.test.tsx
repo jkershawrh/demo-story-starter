@@ -31,9 +31,10 @@ describe('SceneRenderer', () => {
     expect(screen.getByLabelText('Live technical deployment topology')).toBeInTheDocument()
     expect(screen.getByText('OpenShift namespace')).toBeInTheDocument()
     expect(screen.getByText('POST /api/proof')).toBeInTheDocument()
+    expect(screen.getByText('What should this live proof help the audience decide?')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: /run the live journey/i }))
     expect((await screen.findAllByText('Run the first condition'))[0]).toBeInTheDocument()
-    expect(await screen.findByRole('button', { name: /next live act/i })).toBeInTheDocument()
+    expect(await screen.findByRole('button', { name: 'Change the evidence →' })).toBeInTheDocument()
   })
 
   it('renders the statistic-grid scene', () => {

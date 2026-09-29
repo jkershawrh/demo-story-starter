@@ -14,7 +14,7 @@
 - `deployment-topology`: Workloads placed across clusters, sites, or hardware pools.
 - `pipeline`: Ordered causal or technical sequence.
 - `live-proof`: Typed adapter, bounded timeout, visible source state, retry, and rehearsal fixture.
-- `live-journey`: A presenter-controlled sequence of live calls that activates one persistent architecture, pauses after each result, labels source state, and hands off to the working environment. Prefer this when the proof spans multiple conditions or services.
+- `live-journey`: A presenter-controlled sequence of live calls that activates one persistent architecture, pauses after each result, labels source state, and hands off to the working environment. Author its `prompt` as the audience decision and bounded input; author `context` as the policy, evidence, or authority rule that explains the results. Step-forward controls should name the next condition. Prefer this when the proof spans multiple conditions or services.
 - `comparison`: Side-by-side benchmark or state comparison.
 - `scale`: Progressive proof from one request to production impact.
 - `tradeoff`: Honest alternatives and the decision criterion.
