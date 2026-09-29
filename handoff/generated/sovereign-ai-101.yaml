@@ -1,0 +1,36 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: sovereign-ai-101
+  proposed_catalog_item_id: sovereign-ai-101
+  display_name: Sovereign AI 101 — Understand Sovereign AI
+  track: sovereign_ai
+  solution_family: operations_reliability
+  learning_level: "101"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/sovereign-ai-101
+  revision: 5d601b46ba3a7d10deff6c2849eb22af2631a8ef
+artifacts:
+  presentation: ghcr.io/jkershawrh/sovereign-ai-101-presentation@sha256:eb4d58c71716d9e1a3f3bd446d9e66a1a2c278ad1fe5696830b51c551c5df91e
+  workload: ghcr.io/jkershawrh/sovereign-ai-101-rehearsal@sha256:400e2bdd94e8e2a71a0bee42fbdc2d3a59ad623aff16f140107a79b5dd364895
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - sovereign-ai-201
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

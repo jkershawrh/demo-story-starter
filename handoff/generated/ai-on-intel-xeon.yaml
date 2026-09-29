@@ -1,0 +1,32 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: ai-on-intel-xeon
+  proposed_catalog_item_id: null
+  display_name: AI on Intel Xeon — Start Where the Workload Fits
+  track: shared_foundation
+  solution_family: inference
+  learning_level: null
+  experience_type: sales_entry
+  journey_role: entry
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/intel-xeon-ai-sales
+  revision: 96804fb7717f3ef65c64501437b7cc57752251bc
+artifacts:
+  presentation: ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:86ac164c2fdb0b6d13f64f897c2b47dfb7b13a5f4821cc3d847d481fd6233ba5
+  workload: ghcr.io/jkershawrh/intel-xeon-ai-sales-proof-service@sha256:50f9f80d6a430ba906438477288e5edab92ee896f0763f487381cf5fd5b66213
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - intel-llm-cpu-serving
+    - intel-xeon6-agent-201
+  branches_from: null
+proposed_surface: start_here
+launchpad_request: review_non_orderable_start_here_surface
+independent_gates_remaining: []
+known_boundary: Current-session inference proof; hardware identity remains OBSERVED, DECLARED, or UNVERIFIED.

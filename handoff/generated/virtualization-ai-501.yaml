@@ -1,0 +1,36 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: virtualization-ai-501
+  proposed_catalog_item_id: virtualization-ai-501
+  display_name: Virtualization + AI 501 — Scale Governed AI Modernization
+  track: virtualization_ai
+  solution_family: platform_foundations
+  learning_level: "501"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/virtualization-ai-501
+  revision: 14799e38d587f48b850aab283016dd3da16a8acc
+artifacts:
+  presentation: ghcr.io/jkershawrh/virtualization-ai-501-presentation@sha256:6df327b493b701f14f1facc19dd9aa2085b080edf2342318770829de63a2d5d1
+  workload: ghcr.io/jkershawrh/virtualization-ai-501-qualification-adapter@sha256:757226a0dd2e57f295705213acff51b3d09e5d4c1b8a8245cb0640866206e660
+journey:
+  prerequisites:
+    - virtualization-ai-401
+  recommended_next_items: []
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

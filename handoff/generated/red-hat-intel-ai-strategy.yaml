@@ -1,0 +1,34 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: red-hat-intel-ai-strategy
+  proposed_catalog_item_id: null
+  display_name: Red Hat × Intel AI Strategy — Choose the Path to Production
+  track: shared_foundation
+  solution_family: platform_foundations
+  learning_level: null
+  experience_type: sales_entry
+  journey_role: entry
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/red-hat-intel-ai-strategy
+  revision: 05f2a64f988932ea3400aa0229c14ff119796279
+artifacts:
+  presentation: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:09c2f7a226938ff6e085a2b92d6ad88048be95d06a1ad2f9b3c1b15fd1c48732
+  workload: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-proof-service@sha256:795cfca4d14bcd5b69dd41247230f3969fa7030ca3b9730fc7036ec0c1e86dde
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - ai-on-intel-xeon
+    - governed-agentic-ai-sales
+    - sovereign-ai-sales
+    - virtualization-ai-sales
+  branches_from: null
+proposed_surface: start_here
+launchpad_request: review_non_orderable_start_here_surface
+independent_gates_remaining: []
+known_boundary: Non-orderable umbrella entry; never represented as a certified lab.

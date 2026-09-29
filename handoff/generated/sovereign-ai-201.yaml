@@ -1,0 +1,37 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: sovereign-ai-201
+  proposed_catalog_item_id: sovereign-ai-201
+  display_name: Sovereign AI 201 — Build a Governed Sovereign AI Workload
+  track: sovereign_ai
+  solution_family: operations_reliability
+  learning_level: "201"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/sovereign-ai-201
+  revision: 0f8c6d875a1336b2c142648a0c4549d73c99c201
+artifacts:
+  presentation: ghcr.io/jkershawrh/sovereign-ai-201-presentation@sha256:f13a56fb7530c16309098270f3399a8ecc5b59d60481595ea7bd181a7424ca31
+  workload: ghcr.io/jkershawrh/sovereign-ai-201-adapter@sha256:9b1eb7bb0c5b6bf2888f02566070b6140d4c6b049c31151bf4eac9a1beba1708
+journey:
+  prerequisites:
+    - sovereign-ai-101
+  recommended_next_items:
+    - sovereign-ai-301
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

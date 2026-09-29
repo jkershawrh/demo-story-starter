@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://demo-story.redhat-intel.com/schemas/catalog-portfolio-v2.json",
+  "title": "Red Hat Intel catalog portfolio v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "verified_at", "authority", "items"],
+  "properties": {
+    "schema_version": {"const": "demo-story.redhat-intel.com/catalog-portfolio/v2"},
+    "verified_at": {"type": "string", "format": "date"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "grants_launchpad_authority"],
+      "properties": {
+        "owner": {"const": "demo-story-starter factory"},
+        "grants_launchpad_authority": {"const": false}
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/item"}
+    }
+  },
+  "$defs": {
+    "immutableImage": {"type": "string", "pattern": "^[^\\s@]+@sha256:[0-9a-f]{64}$"},
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name", "repository", "source_revision", "track", "solution_family", "learning_level", "experience_type", "journey_role", "prerequisites", "recommended_next_items", "launchpad", "artifacts", "readiness"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "display_name": {"type": "string", "minLength": 3},
+        "repository": {"type": "string", "format": "uri", "pattern": "^https://github\\.com/"},
+        "source_revision": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+        "track": {"enum": ["shared_foundation", "agentic_ai", "sovereign_ai", "virtualization_ai"]},
+        "solution_family": {"enum": ["platform_foundations", "inference", "generative_ai", "agentic_ai", "operations_reliability", "industry_solutions"]},
+        "learning_level": {"type": ["string", "null"], "enum": [null, "001", "101", "201", "301", "401", "501", "601"]},
+        "experience_type": {"enum": ["sales_entry", "guided_demo", "hands_on_lab", "research"]},
+        "journey_role": {"enum": ["entry", "core", "specialty", "reference"]},
+        "specialty_family": {"type": ["string", "null"], "enum": [null, "domain", "platform", "data", "inference", "tooling", "reliability"]},
+        "branches_from": {"type": ["string", "null"]},
+        "prerequisites": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "recommended_next_items": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "launchpad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["catalog_item_id", "lifecycle", "certified_seats"],
+          "properties": {
+            "catalog_item_id": {"type": ["string", "null"]},
+            "lifecycle": {"enum": ["factory_only", "intake_ready", "launchpad_draft", "launchpad_active", "research_only", "planned"]},
+            "certified_seats": {"type": "integer", "minimum": 0}
+          }
+        },
+        "artifacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["presentation", "workload"],
+          "properties": {
+            "presentation": {"anyOf": [{"$ref": "#/$defs/immutableImage"}, {"type": "null"}]},
+            "workload": {"anyOf": [{"$ref": "#/$defs/immutableImage"}, {"type": "null"}]},
+            "qualified_workload": {"anyOf": [{"$ref": "#/$defs/immutableImage"}, {"type": "null"}]}
+          }
+        },
+        "readiness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_bound", "signed", "sbom", "runtime_secret_contract", "resource_estimate", "one_seat", "five_seat", "reclaim"],
+          "properties": {
+            "source_bound": {"type": "boolean"},
+            "signed": {"type": "boolean"},
+            "sbom": {"type": "boolean"},
+            "runtime_secret_contract": {"type": "boolean"},
+            "resource_estimate": {"type": "boolean"},
+            "one_seat": {"type": "boolean"},
+            "five_seat": {"type": "boolean"},
+            "reclaim": {"type": "boolean"}
+          }
+        },
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

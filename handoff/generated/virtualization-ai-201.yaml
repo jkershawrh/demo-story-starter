@@ -1,0 +1,37 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: virtualization-ai-201
+  proposed_catalog_item_id: virtualization-ai-201
+  display_name: Virtualization + AI 201 — Connect a VM to AI
+  track: virtualization_ai
+  solution_family: platform_foundations
+  learning_level: "201"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/virtualization-ai-201
+  revision: 7928d13b9b00820e81f6c96ec047e3c22ec26e3f
+artifacts:
+  presentation: ghcr.io/jkershawrh/virtualization-ai-201-presentation@sha256:9f58d0a74d58201156547d21be2bc8a6b30f9d00619206dcce337d03e0ea4569
+  workload: ghcr.io/jkershawrh/virtualization-ai-201-adapter@sha256:f17a7cc9c708e58186bd38878630dc563b853f78e1535be3435c0c8aec34eedb
+journey:
+  prerequisites:
+    - virtualization-ai-101
+  recommended_next_items:
+    - virtualization-ai-301
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

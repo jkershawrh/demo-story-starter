@@ -1,0 +1,33 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: agentic-ai-601
+  proposed_catalog_item_id: null
+  display_name: Agentic AI 601 — Earn the Right to Act
+  track: agentic_ai
+  solution_family: operations_reliability
+  learning_level: "601"
+  experience_type: research
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/agentic-ai-601
+  revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+artifacts:
+  presentation: ghcr.io/jkershawrh/agentic-ai-601-presentation@sha256:3fac7a38520699eaff96e25bbbff6c311a1e509133f8c4f19ee9843600d0bdcc
+  workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
+journey:
+  prerequisites:
+    - operate-agentic-blueprint
+    - scale-agentic-blueprint
+  recommended_next_items: []
+  branches_from: null
+proposed_surface: research
+launchpad_request: review_only
+independent_gates_remaining:
+  - runtime secret contract
+known_boundary: Execution-disabled research candidate; never promoted solely from model confidence.

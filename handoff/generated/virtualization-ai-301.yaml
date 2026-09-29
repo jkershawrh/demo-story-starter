@@ -1,0 +1,37 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: virtualization-ai-301
+  proposed_catalog_item_id: virtualization-ai-301
+  display_name: Virtualization + AI 301 — Modernize VMs with AI
+  track: virtualization_ai
+  solution_family: platform_foundations
+  learning_level: "301"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/virtualization-ai-301
+  revision: 91e30a4af72bb4a15a4e5dfe2f29abb5692c698f
+artifacts:
+  presentation: ghcr.io/jkershawrh/virtualization-ai-301-presentation@sha256:012c22404725b03c5c5b3d8bb3234e608da334af72762e10e158031b505506fa
+  workload: ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07
+journey:
+  prerequisites:
+    - virtualization-ai-201
+  recommended_next_items:
+    - virtualization-ai-401
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

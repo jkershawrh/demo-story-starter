@@ -1,0 +1,36 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: virtualization-ai-101
+  proposed_catalog_item_id: virtualization-ai-101
+  display_name: Virtualization + AI 101 — Understand VM and AI Coexistence
+  track: virtualization_ai
+  solution_family: platform_foundations
+  learning_level: "101"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/virtualization-ai-foundations
+  revision: 7d0d88d61dcfa1a1ab97f7d187249c7fc29f13da
+artifacts:
+  presentation: ghcr.io/jkershawrh/virtualization-ai-foundations-presentation@sha256:fb4869e465beb513636ad574d9ee1974d82431b226099e6d8933f24263b9d61c
+  workload: ghcr.io/jkershawrh/virtualization-ai-foundations-adapter@sha256:429d27ecd1eaaec98be8e8d252925fe8dd6b0f525d0c5f06f65d1a6adba6d9a9
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - virtualization-ai-201
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

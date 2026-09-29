@@ -1,0 +1,443 @@
+schema_version: demo-story.redhat-intel.com/catalog-portfolio/v2
+verified_at: "2026-09-28"
+authority:
+  owner: demo-story-starter factory
+  grants_launchpad_authority: false
+items:
+  - id: red-hat-intel-ai-strategy
+    display_name: Red Hat × Intel AI Strategy — Choose the Path to Production
+    repository: https://github.com/jkershawrh/red-hat-intel-ai-strategy
+    source_revision: 05f2a64f988932ea3400aa0229c14ff119796279
+    track: shared_foundation
+    solution_family: platform_foundations
+    learning_level: null
+    experience_type: sales_entry
+    journey_role: entry
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [ai-on-intel-xeon, governed-agentic-ai-sales, sovereign-ai-sales, virtualization-ai-sales]
+    launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:09c2f7a226938ff6e085a2b92d6ad88048be95d06a1ad2f9b3c1b15fd1c48732
+      workload: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-proof-service@sha256:795cfca4d14bcd5b69dd41247230f3969fa7030ca3b9730fc7036ec0c1e86dde
+    readiness: &signed_entry {source_bound: true, signed: true, sbom: true, runtime_secret_contract: true, resource_estimate: false, one_seat: false, five_seat: false, reclaim: false}
+    notes: Non-orderable umbrella entry; never represented as a certified lab.
+
+  - id: ai-on-intel-xeon
+    display_name: AI on Intel Xeon — Start Where the Workload Fits
+    repository: https://github.com/jkershawrh/intel-xeon-ai-sales
+    source_revision: 96804fb7717f3ef65c64501437b7cc57752251bc
+    track: shared_foundation
+    solution_family: inference
+    learning_level: null
+    experience_type: sales_entry
+    journey_role: entry
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [intel-llm-cpu-serving, intel-xeon6-agent-201]
+    launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:86ac164c2fdb0b6d13f64f897c2b47dfb7b13a5f4821cc3d847d481fd6233ba5
+      workload: ghcr.io/jkershawrh/intel-xeon-ai-sales-proof-service@sha256:50f9f80d6a430ba906438477288e5edab92ee896f0763f487381cf5fd5b66213
+    readiness: *signed_entry
+    notes: Current-session inference proof; hardware identity remains OBSERVED, DECLARED, or UNVERIFIED.
+
+  - id: governed-agentic-ai-sales
+    display_name: Governed Agentic AI — Earn Trust Before Authority
+    repository: https://github.com/jkershawrh/governed-agentic-ai-sales
+    source_revision: c1365429d57ce128cf9ecfa3b231508698d09e4d
+    track: agentic_ai
+    solution_family: agentic_ai
+    learning_level: null
+    experience_type: sales_entry
+    journey_role: entry
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [operate-agentic-blueprint]
+    launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:4eb250e4e7c87fb7280dc9a3bcf59b94cb93542f8d826ab15672d392a8641ebb
+      workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
+    readiness: *signed_entry
+    notes: Non-orderable track entry; qualifier remains rehearsal and execution-disabled.
+
+  - id: sovereign-ai-sales
+    display_name: Sovereign AI — Control What You Can Prove
+    repository: https://github.com/jkershawrh/sovereign-ai-sales
+    source_revision: 41f3bcb7c733f3b537beefeb24aace2f79ec01c5
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: null
+    experience_type: sales_entry
+    journey_role: entry
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [sovereign-ai-101]
+    launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:f1c3d7fc716d3650c6cc1fad2f046e907834c4683369708addf36c8a92fd54a6
+      workload: ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb
+    readiness: *signed_entry
+    notes: Non-orderable track entry; no live TDX or key-release claim.
+
+  - id: virtualization-ai-sales
+    display_name: Virtualization + AI — Modernize Without Waiting
+    repository: https://github.com/jkershawrh/virtualization-ai-sales
+    source_revision: 80a96cea03ebb98ffdc2e28d818b1145d3d5ed65
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: null
+    experience_type: sales_entry
+    journey_role: entry
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [virtualization-ai-101]
+    launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1a976ffcaa557ed8b4f2c3ee5f7c2c0b8a6d6a495c88c8ecf0a54e85f4d550c2
+      workload: ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07
+    readiness: *signed_entry
+    notes: Non-orderable track entry; no live VM, migration, or Intel-placement claim.
+
+  - id: intel-llm-cpu-serving
+    display_name: Intel AI 101 — CPU Inference Serving on Xeon
+    repository: https://github.com/jkershawrh/launchpad
+    source_revision: null
+    track: shared_foundation
+    solution_family: inference
+    learning_level: "101"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [intel-xeon6-agent-201]
+    launchpad: {catalog_item_id: intel-llm-cpu-serving, lifecycle: launchpad_active, certified_seats: 5}
+    artifacts: {presentation: null, workload: null}
+    readiness: {source_bound: false, signed: false, sbom: false, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: true, reclaim: true}
+    notes: Launchpad-owned shared foundation; immutable identity remains owned by its release record.
+
+  - id: intel-xeon6-agent-201
+    display_name: Agentic AI 201 — Build an AI Agent on Intel Xeon 6
+    repository: https://github.com/jkershawrh/intel-xeon6-ai-agent-201
+    source_revision: null
+    track: agentic_ai
+    solution_family: agentic_ai
+    learning_level: "201"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: [intel-llm-cpu-serving]
+    recommended_next_items: [multi-agent-quickstart]
+    launchpad: {catalog_item_id: intel-xeon6-agent-201, lifecycle: launchpad_active, certified_seats: 5}
+    artifacts: {presentation: null, workload: null}
+    readiness: &launchpad_active {source_bound: false, signed: false, sbom: false, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: true, reclaim: true}
+    notes: Launchpad owns the immutable promoted release identity.
+
+  - id: multi-agent-quickstart
+    display_name: Agentic AI 301 — Build Multi-Agent AI Systems with Open Protocols
+    repository: https://github.com/jkershawrh/multi-agent-quickstart
+    source_revision: null
+    track: agentic_ai
+    solution_family: agentic_ai
+    learning_level: "301"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: [intel-xeon6-agent-201]
+    recommended_next_items: [operate-agentic-blueprint]
+    launchpad: {catalog_item_id: multi-agent-quickstart, lifecycle: launchpad_active, certified_seats: 5}
+    artifacts: {presentation: null, workload: null}
+    readiness: *launchpad_active
+    notes: Launchpad owns the immutable promoted release identity.
+
+  - id: operate-agentic-blueprint
+    display_name: Agentic AI 401 — Operate Evidence-Backed Multi-Agent Systems
+    repository: https://github.com/jkershawrh/launchpad
+    source_revision: null
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "401"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: [multi-agent-quickstart]
+    recommended_next_items: [scale-agentic-blueprint]
+    launchpad: {catalog_item_id: operate-agentic-blueprint, lifecycle: launchpad_draft, certified_seats: 1}
+    artifacts: {presentation: null, workload: null}
+    readiness: {source_bound: false, signed: false, sbom: false, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: false, reclaim: false}
+    notes: Current Launchpad certification session owns further capacity and promotion evidence.
+
+  - id: scale-agentic-blueprint
+    display_name: Agentic AI 501 — Scale and Certify Agentic Systems
+    repository: https://github.com/jkershawrh/agentic-scale-501
+    source_revision: 0a882005514cbee787f3ab085bf91101cb88a56a
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "501"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: [operate-agentic-blueprint]
+    recommended_next_items: [agentic-ai-601]
+    launchpad: {catalog_item_id: scale-agentic-blueprint, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/agentic-scale-501-presentation@sha256:4d67e5d73f8207498b96172b0c5eeaf736686652dc2de1caa21aeb4fea806615
+      workload: ghcr.io/jkershawrh/agentic-scale-501-qualifier@sha256:fe29325bbfdc34466fdfa2a77050282e1e2ec0d6b21d9e0115fe416288d8e431
+    readiness: &zero_seat {source_bound: true, signed: true, sbom: true, runtime_secret_contract: false, resource_estimate: false, one_seat: false, five_seat: false, reclaim: false}
+    notes: Zero-seat handoff; prerequisite certification remains mandatory.
+
+  - id: agentic-ai-601
+    display_name: Agentic AI 601 — Earn the Right to Act
+    repository: https://github.com/jkershawrh/agentic-ai-601
+    source_revision: d88f12ebf1e8a20582cb9324c7369063294b3d4c
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "601"
+    experience_type: research
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: [operate-agentic-blueprint, scale-agentic-blueprint]
+    recommended_next_items: []
+    launchpad: {catalog_item_id: null, lifecycle: research_only, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/agentic-ai-601-presentation@sha256:3fac7a38520699eaff96e25bbbff6c311a1e509133f8c4f19ee9843600d0bdcc
+      workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
+    readiness: *zero_seat
+    notes: Execution-disabled research candidate; never promoted solely from model confidence.
+
+  - &sovereign101
+    id: sovereign-ai-101
+    display_name: Sovereign AI 101 — Understand Sovereign AI
+    repository: https://github.com/jkershawrh/sovereign-ai-101
+    source_revision: 5d601b46ba3a7d10deff6c2849eb22af2631a8ef
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: "101"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [sovereign-ai-201]
+    launchpad: {catalog_item_id: sovereign-ai-101, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/sovereign-ai-101-presentation@sha256:eb4d58c71716d9e1a3f3bd446d9e66a1a2c278ad1fe5696830b51c551c5df91e
+      workload: ghcr.io/jkershawrh/sovereign-ai-101-rehearsal@sha256:400e2bdd94e8e2a71a0bee42fbdc2d3a59ad623aff16f140107a79b5dd364895
+    readiness: *zero_seat
+    notes: Zero-seat factory handoff.
+
+  - <<: *sovereign101
+    id: sovereign-ai-201
+    display_name: Sovereign AI 201 — Build a Governed Sovereign AI Workload
+    repository: https://github.com/jkershawrh/sovereign-ai-201
+    source_revision: 0f8c6d875a1336b2c142648a0c4549d73c99c201
+    learning_level: "201"
+    prerequisites: [sovereign-ai-101]
+    recommended_next_items: [sovereign-ai-301]
+    launchpad: {catalog_item_id: sovereign-ai-201, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/sovereign-ai-201-presentation@sha256:f13a56fb7530c16309098270f3399a8ecc5b59d60481595ea7bd181a7424ca31
+      workload: ghcr.io/jkershawrh/sovereign-ai-201-adapter@sha256:9b1eb7bb0c5b6bf2888f02566070b6140d4c6b049c31151bf4eac9a1beba1708
+
+  - <<: *sovereign101
+    id: sovereign-ai-301
+    display_name: Sovereign AI 301 — Govern Models, Data, and Agents
+    repository: https://github.com/jkershawrh/sovereign-ai-301
+    source_revision: d46625e8e1eb89e35c0a93385a47564d825a8115
+    learning_level: "301"
+    prerequisites: [sovereign-ai-201]
+    recommended_next_items: [sovereign-ai-401]
+    launchpad: {catalog_item_id: sovereign-ai-301, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/sovereign-ai-301-presentation@sha256:1f28dbb880a349bd05cb44c0233f9c6f869d6b371a66d8589c600cb1c117fb9f
+      workload: ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb
+
+  - <<: *sovereign101
+    id: sovereign-ai-401
+    display_name: Sovereign AI 401 — Confidential AI with Intel TDX
+    repository: https://github.com/jkershawrh/sovereign-ai-401
+    source_revision: 2bb27416e353280eef8da002fa0162b5bbf64f4c
+    learning_level: "401"
+    prerequisites: [sovereign-ai-301]
+    recommended_next_items: [sovereign-ai-501]
+    launchpad: {catalog_item_id: sovereign-ai-401, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/sovereign-ai-401-presentation@sha256:3406d439643ee0022f0f8b7b33cd32b09ea081fe068879b1e6ed88c8e282bc71
+      workload: ghcr.io/jkershawrh/sovereign-ai-401-qualifier@sha256:6618e601513a468a807eda1762c124e567c322e89c04a11c067da80bd8ff6721
+    notes: Rehearsal candidate; live TDX, attestation, and key-release proof remain blocked.
+
+  - <<: *sovereign101
+    id: sovereign-ai-501
+    display_name: Sovereign AI 501 — Prove and Certify Sovereign AI
+    repository: https://github.com/jkershawrh/sovereign-ai-501
+    source_revision: bc3583c7c9f3342f0c4eeb79637fe9223cf8ddff
+    learning_level: "501"
+    prerequisites: [sovereign-ai-401]
+    recommended_next_items: []
+    launchpad: {catalog_item_id: sovereign-ai-501, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/sovereign-ai-501-presentation@sha256:cd739547778feaaa5c0d86af26032a1b5962e95fe5447ec0b477730020daae64
+      workload: ghcr.io/jkershawrh/sovereign-ai-501-qualifier@sha256:cc3b3cfc19697b57d03347491523b6d72524fdb7890c591344ca714bbc4bca57
+
+  - &virt101
+    id: virtualization-ai-101
+    display_name: Virtualization + AI 101 — Understand VM and AI Coexistence
+    repository: https://github.com/jkershawrh/virtualization-ai-foundations
+    source_revision: 7d0d88d61dcfa1a1ab97f7d187249c7fc29f13da
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: "101"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: null
+    prerequisites: []
+    recommended_next_items: [virtualization-ai-201]
+    launchpad: {catalog_item_id: virtualization-ai-101, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/virtualization-ai-foundations-presentation@sha256:fb4869e465beb513636ad574d9ee1974d82431b226099e6d8933f24263b9d61c
+      workload: ghcr.io/jkershawrh/virtualization-ai-foundations-adapter@sha256:429d27ecd1eaaec98be8e8d252925fe8dd6b0f525d0c5f06f65d1a6adba6d9a9
+    readiness: *zero_seat
+    notes: Zero-seat factory handoff.
+
+  - <<: *virt101
+    id: virtualization-ai-201
+    display_name: Virtualization + AI 201 — Connect a VM to AI
+    repository: https://github.com/jkershawrh/virtualization-ai-201
+    source_revision: 7928d13b9b00820e81f6c96ec047e3c22ec26e3f
+    learning_level: "201"
+    prerequisites: [virtualization-ai-101]
+    recommended_next_items: [virtualization-ai-301]
+    launchpad: {catalog_item_id: virtualization-ai-201, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/virtualization-ai-201-presentation@sha256:9f58d0a74d58201156547d21be2bc8a6b30f9d00619206dcce337d03e0ea4569
+      workload: ghcr.io/jkershawrh/virtualization-ai-201-adapter@sha256:f17a7cc9c708e58186bd38878630dc563b853f78e1535be3435c0c8aec34eedb
+
+  - <<: *virt101
+    id: virtualization-ai-301
+    display_name: Virtualization + AI 301 — Modernize VMs with AI
+    repository: https://github.com/jkershawrh/virtualization-ai-301
+    source_revision: 91e30a4af72bb4a15a4e5dfe2f29abb5692c698f
+    learning_level: "301"
+    prerequisites: [virtualization-ai-201]
+    recommended_next_items: [virtualization-ai-401]
+    launchpad: {catalog_item_id: virtualization-ai-301, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/virtualization-ai-301-presentation@sha256:012c22404725b03c5c5b3d8bb3234e608da334af72762e10e158031b505506fa
+      workload: ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07
+
+  - <<: *virt101
+    id: virtualization-ai-401
+    display_name: Virtualization + AI 401 — Operate Hybrid VM and AI Workloads
+    repository: https://github.com/jkershawrh/virtualization-ai-401
+    source_revision: 255e6ba2ff6f8fd4734a9af7c0de3d6130abfd81
+    learning_level: "401"
+    prerequisites: [virtualization-ai-301]
+    recommended_next_items: [virtualization-ai-501]
+    launchpad: {catalog_item_id: virtualization-ai-401, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/virtualization-ai-401-presentation@sha256:3b380eb7e46e82f95317e303d56898787d528bbac9272f6bdaa4f6d19a02920c
+      workload: ghcr.io/jkershawrh/virtualization-ai-401-operations-adapter@sha256:2e68e78c81b5be284160145191c0ca138b057d0859a74d99dd53de4374996ffa
+
+  - <<: *virt101
+    id: virtualization-ai-501
+    display_name: Virtualization + AI 501 — Scale Governed AI Modernization
+    repository: https://github.com/jkershawrh/virtualization-ai-501
+    source_revision: 14799e38d587f48b850aab283016dd3da16a8acc
+    learning_level: "501"
+    prerequisites: [virtualization-ai-401]
+    recommended_next_items: []
+    launchpad: {catalog_item_id: virtualization-ai-501, lifecycle: intake_ready, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/virtualization-ai-501-presentation@sha256:6df327b493b701f14f1facc19dd9aa2085b080edf2342318770829de63a2d5d1
+      workload: ghcr.io/jkershawrh/virtualization-ai-501-qualification-adapter@sha256:757226a0dd2e57f295705213acff51b3d09e5d4c1b8a8245cb0640866206e660
+
+  - id: network-operations-agent
+    display_name: Agentic AI 301 — Network Operations
+    repository: https://github.com/jkershawrh/network-operations-agent
+    source_revision: 365d2c911e663cbb14aba53fd200b7722e0d9b07
+    track: agentic_ai
+    solution_family: industry_solutions
+    learning_level: "301"
+    experience_type: hands_on_lab
+    journey_role: specialty
+    specialty_family: domain
+    branches_from: multi-agent-quickstart
+    prerequisites: [intel-xeon6-agent-201]
+    recommended_next_items: [operate-agentic-blueprint]
+    launchpad: {catalog_item_id: network-operations-agent, lifecycle: launchpad_active, certified_seats: 5}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/network-operations-agent@sha256:74afaf7d26791327fe4d1d7e5f302c7532b644f8d902daf1e914f9c2c4e5faf1
+      workload: ghcr.io/jkershawrh/network-operations-agent@sha256:74afaf7d26791327fe4d1d7e5f302c7532b644f8d902daf1e914f9c2c4e5faf1
+    readiness: {source_bound: true, signed: false, sbom: false, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: true, reclaim: true}
+    notes: Industry episode; Launchpad certification evidence remains external to the factory source revision.
+
+  - id: hybrid-fraud-detection
+    display_name: Agentic AI 201 — Hybrid Fraud Detection
+    repository: https://github.com/jkershawrh/hybrid-fraud-detection
+    source_revision: 14fad40be5904e293c5061bdaa09f8be31db7f7f
+    track: agentic_ai
+    solution_family: industry_solutions
+    learning_level: "201"
+    experience_type: hands_on_lab
+    journey_role: specialty
+    specialty_family: domain
+    branches_from: intel-xeon6-agent-201
+    prerequisites: [intel-llm-cpu-serving]
+    recommended_next_items: [intel-xeon6-agent-201]
+    launchpad: {catalog_item_id: hybrid-fraud-detection, lifecycle: launchpad_active, certified_seats: 5}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/hybrid-fraud-detection@sha256:f217fccd35f5a3508ca142671941180fae6a0a1b031ec6a8f045473ad2bae237
+      workload: ghcr.io/jkershawrh/hybrid-fraud-detection@sha256:f217fccd35f5a3508ca142671941180fae6a0a1b031ec6a8f045473ad2bae237
+    readiness: {source_bound: true, signed: false, sbom: false, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: true, reclaim: true}
+    notes: Industry episode on the agentic blueprint.
+
+  - id: agent-reliability
+    display_name: Agentic AI 301 — Agent Reliability
+    repository: https://github.com/jkershawrh/launchpad
+    source_revision: null
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "301"
+    experience_type: hands_on_lab
+    journey_role: specialty
+    specialty_family: reliability
+    branches_from: multi-agent-quickstart
+    prerequisites: [intel-xeon6-agent-201]
+    recommended_next_items: [operate-agentic-blueprint]
+    launchpad: {catalog_item_id: agent-reliability, lifecycle: launchpad_active, certified_seats: 5}
+    artifacts:
+      presentation: null
+      workload: quay.io/rh-ee-jkershaw/agent-reliability-quickstart@sha256:604331d4a050f47457e27c2191106aa3fa075d408514143cd9eac6da18dfc3fb
+      qualified_workload: quay.io/rh-ee-jkershaw/agent-reliability-quickstart@sha256:7aff969774fa4b3efac77de4525a046a9c36ce8609de77af20f1077ad17a79d1
+    readiness: {source_bound: false, signed: false, sbom: false, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: true, reclaim: true}
+    notes: Current and previously qualified workload digests differ; certification does not transfer silently.
+
+  - id: cloud-ran-agentic-ai
+    display_name: Agentic AI 301 — Multivendor Cloud RAN
+    repository: https://github.com/jkershawrh/network-operations-agent
+    source_revision: null
+    track: agentic_ai
+    solution_family: industry_solutions
+    learning_level: "301"
+    experience_type: guided_demo
+    journey_role: specialty
+    specialty_family: domain
+    branches_from: network-operations-agent
+    prerequisites: [network-operations-agent]
+    recommended_next_items: [operate-agentic-blueprint]
+    launchpad: {catalog_item_id: null, lifecycle: planned, certified_seats: 0}
+    artifacts: {presentation: null, workload: null}
+    readiness: {source_bound: false, signed: false, sbom: false, runtime_secret_contract: false, resource_estimate: false, one_seat: false, five_seat: false, reclaim: false}
+    notes: Planned industry episode; Ericsson-specific source and domain contract remain required.

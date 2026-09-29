@@ -1,0 +1,37 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: sovereign-ai-301
+  proposed_catalog_item_id: sovereign-ai-301
+  display_name: Sovereign AI 301 — Govern Models, Data, and Agents
+  track: sovereign_ai
+  solution_family: operations_reliability
+  learning_level: "301"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/sovereign-ai-301
+  revision: d46625e8e1eb89e35c0a93385a47564d825a8115
+artifacts:
+  presentation: ghcr.io/jkershawrh/sovereign-ai-301-presentation@sha256:1f28dbb880a349bd05cb44c0233f9c6f869d6b371a66d8589c600cb1c117fb9f
+  workload: ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb
+journey:
+  prerequisites:
+    - sovereign-ai-201
+  recommended_next_items:
+    - sovereign-ai-401
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Zero-seat factory handoff.

@@ -1,0 +1,111 @@
+schema_version: demo-story.redhat-intel.com/launchpad-catalog-migration-map/v2
+rule: Catalog IDs and release identities remain stable; taxonomy metadata never transfers certification.
+mappings:
+  - portfolio_id: intel-llm-cpu-serving
+    launchpad_catalog_item_id: intel-llm-cpu-serving
+    track: shared_foundation
+    solution_family: inference
+    learning_level: "101"
+    lifecycle: launchpad_active
+  - portfolio_id: intel-xeon6-agent-201
+    launchpad_catalog_item_id: intel-xeon6-agent-201
+    track: agentic_ai
+    solution_family: agentic_ai
+    learning_level: "201"
+    lifecycle: launchpad_active
+  - portfolio_id: multi-agent-quickstart
+    launchpad_catalog_item_id: multi-agent-quickstart
+    track: agentic_ai
+    solution_family: agentic_ai
+    learning_level: "301"
+    lifecycle: launchpad_active
+  - portfolio_id: operate-agentic-blueprint
+    launchpad_catalog_item_id: operate-agentic-blueprint
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "401"
+    lifecycle: launchpad_draft
+  - portfolio_id: scale-agentic-blueprint
+    launchpad_catalog_item_id: scale-agentic-blueprint
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "501"
+    lifecycle: intake_ready
+  - portfolio_id: sovereign-ai-101
+    launchpad_catalog_item_id: sovereign-ai-101
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: "101"
+    lifecycle: intake_ready
+  - portfolio_id: sovereign-ai-201
+    launchpad_catalog_item_id: sovereign-ai-201
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: "201"
+    lifecycle: intake_ready
+  - portfolio_id: sovereign-ai-301
+    launchpad_catalog_item_id: sovereign-ai-301
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: "301"
+    lifecycle: intake_ready
+  - portfolio_id: sovereign-ai-401
+    launchpad_catalog_item_id: sovereign-ai-401
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: "401"
+    lifecycle: intake_ready
+  - portfolio_id: sovereign-ai-501
+    launchpad_catalog_item_id: sovereign-ai-501
+    track: sovereign_ai
+    solution_family: operations_reliability
+    learning_level: "501"
+    lifecycle: intake_ready
+  - portfolio_id: virtualization-ai-101
+    launchpad_catalog_item_id: virtualization-ai-101
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: "101"
+    lifecycle: intake_ready
+  - portfolio_id: virtualization-ai-201
+    launchpad_catalog_item_id: virtualization-ai-201
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: "201"
+    lifecycle: intake_ready
+  - portfolio_id: virtualization-ai-301
+    launchpad_catalog_item_id: virtualization-ai-301
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: "301"
+    lifecycle: intake_ready
+  - portfolio_id: virtualization-ai-401
+    launchpad_catalog_item_id: virtualization-ai-401
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: "401"
+    lifecycle: intake_ready
+  - portfolio_id: virtualization-ai-501
+    launchpad_catalog_item_id: virtualization-ai-501
+    track: virtualization_ai
+    solution_family: platform_foundations
+    learning_level: "501"
+    lifecycle: intake_ready
+  - portfolio_id: network-operations-agent
+    launchpad_catalog_item_id: network-operations-agent
+    track: agentic_ai
+    solution_family: industry_solutions
+    learning_level: "301"
+    lifecycle: launchpad_active
+  - portfolio_id: hybrid-fraud-detection
+    launchpad_catalog_item_id: hybrid-fraud-detection
+    track: agentic_ai
+    solution_family: industry_solutions
+    learning_level: "201"
+    lifecycle: launchpad_active
+  - portfolio_id: agent-reliability
+    launchpad_catalog_item_id: agent-reliability
+    track: agentic_ai
+    solution_family: operations_reliability
+    learning_level: "301"
+    lifecycle: launchpad_active

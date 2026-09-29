@@ -1,0 +1,31 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: virtualization-ai-sales
+  proposed_catalog_item_id: null
+  display_name: Virtualization + AI — Modernize Without Waiting
+  track: virtualization_ai
+  solution_family: platform_foundations
+  learning_level: null
+  experience_type: sales_entry
+  journey_role: entry
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/virtualization-ai-sales
+  revision: 80a96cea03ebb98ffdc2e28d818b1145d3d5ed65
+artifacts:
+  presentation: ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1a976ffcaa557ed8b4f2c3ee5f7c2c0b8a6d6a495c88c8ecf0a54e85f4d550c2
+  workload: ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - virtualization-ai-101
+  branches_from: null
+proposed_surface: start_here
+launchpad_request: review_non_orderable_start_here_surface
+independent_gates_remaining: []
+known_boundary: Non-orderable track entry; no live VM, migration, or Intel-placement claim.

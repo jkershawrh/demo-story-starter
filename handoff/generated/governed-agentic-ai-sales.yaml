@@ -1,0 +1,31 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: governed-agentic-ai-sales
+  proposed_catalog_item_id: null
+  display_name: Governed Agentic AI — Earn Trust Before Authority
+  track: agentic_ai
+  solution_family: agentic_ai
+  learning_level: null
+  experience_type: sales_entry
+  journey_role: entry
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/governed-agentic-ai-sales
+  revision: c1365429d57ce128cf9ecfa3b231508698d09e4d
+artifacts:
+  presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:4eb250e4e7c87fb7280dc9a3bcf59b94cb93542f8d826ab15672d392a8641ebb
+  workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - operate-agentic-blueprint
+  branches_from: null
+proposed_surface: start_here
+launchpad_request: review_non_orderable_start_here_surface
+independent_gates_remaining: []
+known_boundary: Non-orderable track entry; qualifier remains rehearsal and execution-disabled.

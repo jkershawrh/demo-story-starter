@@ -1,0 +1,37 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: sovereign-ai-401
+  proposed_catalog_item_id: sovereign-ai-401
+  display_name: Sovereign AI 401 — Confidential AI with Intel TDX
+  track: sovereign_ai
+  solution_family: operations_reliability
+  learning_level: "401"
+  experience_type: hands_on_lab
+  journey_role: core
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/sovereign-ai-401
+  revision: 2bb27416e353280eef8da002fa0162b5bbf64f4c
+artifacts:
+  presentation: ghcr.io/jkershawrh/sovereign-ai-401-presentation@sha256:3406d439643ee0022f0f8b7b33cd32b09ea081fe068879b1e6ed88c8e282bc71
+  workload: ghcr.io/jkershawrh/sovereign-ai-401-qualifier@sha256:6618e601513a468a807eda1762c124e567c322e89c04a11c067da80bd8ff6721
+journey:
+  prerequisites:
+    - sovereign-ai-301
+  recommended_next_items:
+    - sovereign-ai-501
+  branches_from: null
+proposed_surface: orderable_catalog
+launchpad_request: approve_source_and_run_discovery
+independent_gates_remaining:
+  - runtime secret contract
+  - resource estimate
+  - one seat
+  - five seat
+  - reclaim
+known_boundary: Rehearsal candidate; live TDX, attestation, and key-release proof remain blocked.

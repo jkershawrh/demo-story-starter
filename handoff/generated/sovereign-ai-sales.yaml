@@ -1,0 +1,31 @@
+schema_version: demo-story.redhat-intel.com/catalog-intake-bundle/v2
+identity:
+  portfolio_id: sovereign-ai-sales
+  proposed_catalog_item_id: null
+  display_name: Sovereign AI — Control What You Can Prove
+  track: sovereign_ai
+  solution_family: operations_reliability
+  learning_level: null
+  experience_type: sales_entry
+  journey_role: entry
+authority:
+  orderable: false
+  certified: false
+  promotion_eligible: false
+  may_provision: false
+  may_publish: false
+source:
+  repository: https://github.com/jkershawrh/sovereign-ai-sales
+  revision: 41f3bcb7c733f3b537beefeb24aace2f79ec01c5
+artifacts:
+  presentation: ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:f1c3d7fc716d3650c6cc1fad2f046e907834c4683369708addf36c8a92fd54a6
+  workload: ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb
+journey:
+  prerequisites: []
+  recommended_next_items:
+    - sovereign-ai-101
+  branches_from: null
+proposed_surface: start_here
+launchpad_request: review_non_orderable_start_here_surface
+independent_gates_remaining: []
+known_boundary: Non-orderable track entry; no live TDX or key-release claim.

@@ -6,6 +6,8 @@ Its central pattern is **discovery-led progressive proof**: repository or QuickS
 
 For complete lab creation—not only the presentation—use the [lab factory roadmap](docs/lab-factory-roadmap.md). It organizes the portfolio into Agentic AI, Sovereign AI, and Virtualization + AI tracks and defines the gates from repository discovery through immutable images and a fail-closed Launchpad handoff. The [immutable candidate index](docs/immutable-candidate-index.md) records the exact factory artifacts currently available for independent Launchpad intake. Launchpad certification and publication remain independent downstream actions.
 
+The [catalog portfolio v2](docs/catalog-portfolio-v2.md) turns that roadmap into a validated, machine-readable inventory. It separates track, usage, learning level, and experience type; generates zero-authority intake bundles; preserves existing Launchpad IDs in a migration map; and provides an offline [catalog preview](preview/catalog/index.html). Run `npm run generate:catalog` after editing the portfolio and `npm run verify:catalog-generated` before committing.
+
 Value claims use a separate fail-closed lane. The factory vendors and pins the
 canonical `vef.claim.v1alpha2` contract plus the exact Launchpad adapter
 revision in
