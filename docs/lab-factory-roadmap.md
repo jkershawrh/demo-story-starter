@@ -212,13 +212,20 @@ Keep three evidence lanes independent:
 - GTM attribution records consented account/opportunity linkage and accepted
   influence.
 
+VEF owns the canonical claim language, validation, attribution, confidence
+policy, calculations, and scorecard projections. Product repositories own raw
+measurements, extraction, privacy, provenance, and semantic correctness.
+Launchpad owns its `launchpad.vef-pilot-input.*` schemas and the adapter that
+maps those sanitized inputs into VEF.
+
 VEF code health is not evidence quality. Before a benchmark enters sales copy,
 its claim must include the source URL, table or section, geography, effective
 date, retrieval date, units, transformation, confidence, and validation state.
 Illustrative assumptions remain hypotheses. Launchpad's local
-`vef.claim.v1alpha2` shape must either become an authoritative VEF schema or be
-documented as a Launchpad adapter mapped to an authoritative VEF version; it
-must not be represented as upstream alignment until that ownership is resolved.
+The Launchpad adapter currently names `vef.claim.v1alpha2`, but VEF has not
+published that JSON Schema identifier. Treat the output as a provisional
+Launchpad adapter shape until VEF publishes the contract and Launchpad pins and
+passes conformance against its immutable revision.
 
 ## Factory workflow and gates
 
@@ -429,8 +436,10 @@ true:
    immutable experience. Build the three track-specific entry experiences next,
    connecting each to an existing technical lab rather than creating
    disconnected catalog items.
-9. Resolve VEF schema ownership and source every benchmark assumption before
-   enabling value claims in sales telemetry or talk tracks.
+9. VEF and Launchpad ownership boundaries are now explicit. Publish the
+   canonical VEF claim schema, pin Launchpad adapter conformance, and source
+   every benchmark assumption before enabling value claims in sales telemetry
+   or talk tracks.
 
 This sequence establishes the factory contract once, then reuses it without
 turning every new repository into a custom Launchpad onboarding exercise.
