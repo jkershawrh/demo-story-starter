@@ -425,9 +425,10 @@ true:
    exist.
 7. Decide whether Agentic 101 materially adds to shared CPU Inference 101 before
    creating it.
-8. Build the Red Hat × Intel AI Strategy sales entry experience, then the three
-   track-specific entry experiences. Connect each to an existing technical lab
-   rather than creating disconnected catalog items.
+8. The Red Hat × Intel AI Strategy umbrella sales entry is complete as a signed
+   immutable experience. Build the three track-specific entry experiences next,
+   connecting each to an existing technical lab rather than creating
+   disconnected catalog items.
 9. Resolve VEF schema ownership and source every benchmark assumption before
    enabling value claims in sales telemetry or talk tracks.
 

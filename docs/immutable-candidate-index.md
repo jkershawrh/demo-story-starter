@@ -5,6 +5,18 @@ factory build and evidence boundary. It is not a Launchpad certification or
 catalog-activation record. Every canonical handoff listed here declares zero
 certified seats and grants no provisioning, promotion, or publication authority.
 
+## Sales entry experiences
+
+### Red Hat × Intel AI Strategy — Choose the Path to Production
+
+- Source: `05f2a64f988932ea3400aa0229c14ff119796279`
+- Presentation: `ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:09c2f7a226938ff6e085a2b92d6ad88048be95d06a1ad2f9b3c1b15fd1c48732`
+- Portfolio proof: `ghcr.io/jkershawrh/red-hat-intel-ai-strategy-proof-service@sha256:795cfca4d14bcd5b69dd41247230f3969fa7030ca3b9730fc7036ec0c1e86dde`
+- State: signed umbrella sales-entry experience with anonymous funnel telemetry,
+  current-session artifact proof, and deliberate handoff into Agentic,
+  Sovereign, or Virtualization + AI. It is not a numbered lab or a certification
+  result.
+
 ## Agentic AI
 
 ### Agentic AI 501 — Scale and Certify Agentic Systems
