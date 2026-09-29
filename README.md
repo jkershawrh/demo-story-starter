@@ -6,6 +6,14 @@ Its central pattern is **discovery-led progressive proof**: repository or QuickS
 
 For complete lab creation—not only the presentation—use the [lab factory roadmap](docs/lab-factory-roadmap.md). It organizes the portfolio into Agentic AI, Sovereign AI, and Virtualization + AI tracks and defines the gates from repository discovery through immutable images and a fail-closed Launchpad handoff. The [immutable candidate index](docs/immutable-candidate-index.md) records the exact factory artifacts currently available for independent Launchpad intake. Launchpad certification and publication remain independent downstream actions.
 
+Value claims use a separate fail-closed lane. The factory vendors and pins the
+canonical `vef.claim.v1alpha2` contract plus the exact Launchpad adapter
+revision in
+[`contracts/vef/launchpad-adapter-conformance.yaml`](contracts/vef/launchpad-adapter-conformance.yaml).
+Run `npm run validate:vef-adapter` to verify the pin and fixture locally. This
+validation never grants certification, promotion, publication, or financial
+approval.
+
 ## Quick start
 
 ```bash

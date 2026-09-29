@@ -1,0 +1,62 @@
+schema_version: demo-story.redhat-intel.com/vef-adapter-conformance/v1
+kind: VEFAdapterConformance
+metadata:
+  owner: demo-story-factory
+  fixture_only: true
+  purpose: Pin the Launchpad adapter to the canonical VEF claim contract without granting runtime or financial authority.
+authority:
+  may_modify_launchpad: false
+  may_certify: false
+  may_promote: false
+  may_publish_value_claim: false
+contract:
+  id: vef.claim.v1alpha2
+  repository: "https://github.com/jkershawrh/value-evidence-framework"
+  revision: 2e641b6dc8ce1223d131789ff36beb5e118b779f
+  canonical_path: schemas/claim.v1alpha2.json
+  local_schema: claim.v1alpha2.json
+  sha256: 900b838d03ff412bfb544cc60db51c15712ccdf67ffa0db6cf0c7adc778e92be
+adapter:
+  owner: launchpad
+  repository: "https://github.com/rhpds/launchpad"
+  revision: fc18b293d2ffbbbc5c277a7076b0ffe7e18e43e9
+  source_path: scripts/vef_export_pilot.py
+  source_sha256: f873f73f0bb09aa486ac75195fba42631a41e5e44d2a910291fcca43c6acd6d0
+  input_contract: launchpad.vef-pilot-input.v1alpha2
+  output_envelope: launchpad.vef-pilot-claim.v1alpha2
+  output_schema_path: schemas/vef/launchpad-pilot-claim.v1alpha2.schema.json
+  output_schema_sha256: ec2425d0dc6daceecdc9328bc825f6da919fdb483002adf7dd86b86cc960ae9b
+claim:
+  schema_version: vef.claim.v1alpha2
+  id: conformance.launchpad.cost-per-successful-journey
+  product: launchpad
+  outcome_id: launchpad.cost-per-slo-qualified-journey
+  value_type: cost_avoidance
+  measurement:
+    fixture: true
+    successful_journeys: 1
+    unit: successful_journey
+  counterfactual:
+    method: matched_control
+    expected_without_product: 1
+  attribution:
+    product_share: 0.5
+    competing_factors: [facilitator_experience, workload_mix]
+  financial_model:
+    gross_value: 0
+    currency: USD
+    customer_validated: true
+  evidence:
+    confidence: high
+    sources:
+      - id: launchpad-source-conformance
+        kind: launchpad_receipt
+        uri: "evidence://launchpad/conformance-fixture"
+        content_sha256: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        retrieved_at: "2026-09-28T12:00:00Z"
+        confidence: high
+        validation_state: accepted
+    reproducible: true
+    validation_state: accepted
+    value_eligible: true
+  realization_cost: 0

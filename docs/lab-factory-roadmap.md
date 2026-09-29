@@ -221,11 +221,14 @@ maps those sanitized inputs into VEF.
 VEF code health is not evidence quality. Before a benchmark enters sales copy,
 its claim must include the source URL, table or section, geography, effective
 date, retrieval date, units, transformation, confidence, and validation state.
-Illustrative assumptions remain hypotheses. Launchpad's local
-The Launchpad adapter currently names `vef.claim.v1alpha2`, but VEF has not
-published that JSON Schema identifier. Treat the output as a provisional
-Launchpad adapter shape until VEF publishes the contract and Launchpad pins and
-passes conformance against its immutable revision.
+Illustrative assumptions remain hypotheses.
+
+VEF now publishes the canonical `vef.claim.v1alpha2` JSON Schema at immutable
+revision `2e641b6dc8ce1223d131789ff36beb5e118b779f`. The factory pins that schema
+and Launchpad adapter revision in
+`contracts/vef/launchpad-adapter-conformance.yaml`. The conformance fixture
+proves contract shape and fail-closed source handling only; it grants no
+Launchpad certification, promotion, publication, or financial authority.
 
 ## Factory workflow and gates
 
@@ -436,10 +439,10 @@ true:
    Sovereign AI, and Virtualization + AI track entries are complete as signed
    immutable experiences connected to their technical journeys. Keep future
    sales entries connected to an existing evidence contract and lab path.
-9. VEF and Launchpad ownership boundaries are now explicit. Publish the
-   canonical VEF claim schema, pin Launchpad adapter conformance, and source
-   every benchmark assumption before enabling value claims in sales telemetry
-   or talk tracks.
+9. VEF and Launchpad ownership boundaries are explicit, the canonical VEF
+   claim schema is published, and Launchpad adapter conformance is pinned.
+   Continue to source every benchmark assumption before enabling its value
+   claim in sales telemetry or talk tracks.
 
 This sequence establishes the factory contract once, then reuses it without
 turning every new repository into a custom Launchpad onboarding exercise.
