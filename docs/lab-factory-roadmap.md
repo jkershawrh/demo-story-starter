@@ -133,8 +133,7 @@ scoped right to act; it never earns unrestricted autonomy.
 ### Sovereign AI
 
 The track now has factory-built, signed, digest-pinned candidates and canonical
-zero-seat handoffs for levels 101 through 401. The 501 factory build is in
-progress. Launchpad does not yet define a `sovereign_ai` solution family or
+zero-seat handoffs for levels 101 through 501. Launchpad does not yet define a `sovereign_ai` solution family or
 Sovereign catalog/onboarding records; taxonomy, level assignments, runtime
 compatibility, certification, and publication remain intake hypotheses until
 Launchpad approves them.
@@ -145,7 +144,7 @@ Launchpad approves them.
 | 201 | Build a Governed Sovereign AI Workload | immutable factory candidate; zero-seat handoff | Establish model identity, residency policy, and an evidence record. |
 | 301 | Govern Models, Data, and Agents | immutable factory candidate; zero-seat handoff | Enforce provenance, identity, routing, policy, and audit boundaries. |
 | 401 | Confidential AI with Intel TDX | immutable rehearsal candidate; live TDX proof blocked | Prove attestation, protected use, and gated secret release. |
-| 501 | Prove and Certify Sovereign AI | factory release in progress | Validate the complete control and evidence envelope. |
+| 501 | Prove and Certify Sovereign AI | immutable factory candidate; zero-seat handoff | Validate the complete control and evidence envelope. |
 
 The `sovereign-ai-lab` repository is the principal discovery source. Triforce
 Secure contributes the guided-attestation story, but it is not a second runtime.
@@ -153,8 +152,7 @@ Secure contributes the guided-attestation story, but it is not a second runtime.
 ### Virtualization + AI
 
 The track now has factory-built, signed, digest-pinned candidates and canonical
-zero-seat handoffs for levels 101 through 401. The 501 factory build is in
-progress. Virtualization currently appears in Launchpad as a platform capability,
+zero-seat handoffs for levels 101 through 501. Virtualization currently appears in Launchpad as a platform capability,
 not an approved learning family. Levels must still be accepted through intake
 and certified from the discovered learner work rather than inferred from the
 existence of a complete sequence.
@@ -165,7 +163,7 @@ existence of a complete sequence.
 | 201 | Connect a VM to AI | immutable factory candidate; zero-seat handoff | Configure and prove one real VM-to-AI request. |
 | 301 | Modernize VMs with AI | immutable factory candidate; zero-seat handoff | Add identity, networking, placement, observability, and measured behavior. |
 | 401 | Operate Hybrid VM and AI Workloads | immutable factory candidate; zero-seat handoff | Exercise migration, resilience, recovery, policy, and day-two operations. |
-| 501 | Scale Governed AI Modernization | factory build in progress | Earn 501 through fleet-scale migration and certification evidence. |
+| 501 | Scale Governed AI Modernization | immutable factory candidate; zero-seat handoff | Earn 501 through fleet-scale migration and certification evidence. |
 
 Triforce Virt supplies the focused causal story. The OpenShift Virtualization
 roadshow supplies selected implementation modules. The full roadshow must not be
@@ -417,11 +415,10 @@ true:
 3. Keep Agentic 601 non-orderable and execution-disabled. Begin live earned-
    authority qualification only after 401 and 501 certify the workload,
    evidence, policy, recovery, and human-promotion envelope.
-4. Hand Sovereign 101–401 to Launchpad as separate zero-seat candidates; finish
-   the 501 immutable release and handoff. Require real TDX runtime proof before
+4. Hand Sovereign 101–501 to Launchpad as separate zero-seat candidates. Require real TDX runtime proof before
    promoting any 401 confidential-compute claim beyond rehearsal.
-5. Hand Virtualization + AI 101–401 to Launchpad as separate zero-seat
-   candidates; finish the 501 fleet-qualification release and handoff.
+5. Hand Virtualization + AI 101–501 to Launchpad as separate zero-seat
+   candidates.
 6. Standardize Network Operations, Hybrid Fraud, and Agent Reliability on the
    canonical handoff without erasing their existing Launchpad evidence. Add
    Cloud RAN and healthcare only when source candidates and domain contracts

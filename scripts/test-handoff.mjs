@@ -10,8 +10,10 @@ const run = (path) => spawnSync(process.execPath, ['--experimental-strip-types',
 const dir = await mkdtemp(join(tmpdir(), 'handoff-test-'))
 const fixture = async (name, text) => { const path = join(dir, name); await writeFile(path, text); return path }
 
+assert.doesNotMatch(source, /\{[^\n]*:\s+https?:\/\//, 'flow-mapping URLs must be quoted for YAML parser portability')
 assert.equal(run(await fixture('valid.yaml', source)).status, 0)
 assert.equal(run(await fixture('level-601.yaml', source.replaceAll('"301"', '"601"'))).status, 0)
+assert.notEqual(run(await fixture('unquoted-flow-url.yaml', source.replace('repo_url: "https://example.invalid/workload.git"', 'repo_url: https://example.invalid/workload.git'))).status, 0)
 assert.notEqual(run(await fixture('authority.yaml', source.replace('    certified: false', '    certified: true'))).status, 0)
 assert.notEqual(run(await fixture('duplicate.yaml', source.replace('    orderable: false', '    orderable: false\n    orderable: true'))).status, 0)
 assert.notEqual(run(await fixture('secret.yaml', `${source}\nclient_secret: exposed\n`)).status, 0)

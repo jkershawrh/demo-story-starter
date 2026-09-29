@@ -4,7 +4,7 @@ A reusable Red Hat × Intel interactive presentation system derived from the Tri
 
 Its central pattern is **discovery-led progressive proof**: repository or QuickStart → verified demo blueprint → story → guided causal architecture → live workflow → changed condition or scale trial → inline mechanism explanation → evidence-derived payoff → close → optional lab handoff. Triforce supplies the cadence; each source system supplies its own architecture and operational pattern.
 
-For complete lab creation—not only the presentation—use the [lab factory roadmap](docs/lab-factory-roadmap.md). It organizes the portfolio into Agentic AI, Sovereign AI, and Virtualization + AI tracks and defines the gates from repository discovery through immutable images and a fail-closed Launchpad handoff. Launchpad certification and publication remain independent downstream actions.
+For complete lab creation—not only the presentation—use the [lab factory roadmap](docs/lab-factory-roadmap.md). It organizes the portfolio into Agentic AI, Sovereign AI, and Virtualization + AI tracks and defines the gates from repository discovery through immutable images and a fail-closed Launchpad handoff. The [immutable candidate index](docs/immutable-candidate-index.md) records the exact factory artifacts currently available for independent Launchpad intake. Launchpad certification and publication remain independent downstream actions.
 
 ## Quick start
 

@@ -10,6 +10,8 @@ const manifestPath = resolve(input)
 const root = dirname(manifestPath)
 const text = await readFile(manifestPath, 'utf8')
 const errors: string[] = []
+const unquotedFlowUrlLine = text.split('\n').findIndex((line) => /\{[^\n]*:\s+https?:\/\//.test(line))
+if (unquotedFlowUrlLine >= 0) errors.push(`YAML: quote URL values inside flow mappings (line ${unquotedFlowUrlLine + 1})`)
 const document = parseDocument(text, { uniqueKeys: true, maxAliasCount: 0, strict: true })
 for (const error of document.errors) errors.push(`YAML: ${error.message}`)
 const data = document.toJS({ maxAliasCount: 0 }) as Record<string, any>
