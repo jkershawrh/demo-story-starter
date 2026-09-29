@@ -14,6 +14,15 @@ describe('runProof', () => {
     expect(state).toMatchObject({ status: 'ready', source: 'live', data: { value: 42 } })
   })
 
+  it('honors source state declared by a reachable rehearsal service', async () => {
+    const adapter: LiveDataAdapter<{ sourceState: string; value: number }> = {
+      id: 'reachable-rehearsal', rehearsal: { data: { sourceState: 'REHEARSAL', value: 1 }, collectedAt: '2026-01-01T00:00:00Z' },
+      load: vi.fn().mockResolvedValue({ sourceState: 'REHEARSAL', value: 42 }),
+    }
+    const state = await runProof(adapter)
+    expect(state).toMatchObject({ status: 'ready', source: 'rehearsal', data: { value: 42 } })
+  })
+
   it('labels fallback data as rehearsal', async () => {
     const adapter: LiveDataAdapter<{ value: number }> = {
       id: 'fallback', rehearsal: { data: { value: 7 }, collectedAt: '2026-01-01T00:00:00Z' },

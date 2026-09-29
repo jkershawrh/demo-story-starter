@@ -432,10 +432,10 @@ true:
    exist.
 7. Decide whether Agentic 101 materially adds to shared CPU Inference 101 before
    creating it.
-8. The Red Hat × Intel AI Strategy umbrella plus the Governed Agentic AI and
-   Sovereign AI track entries are complete as signed immutable experiences.
-   Build the Virtualization + AI sales entry next, connecting it to the existing
-   technical track rather than creating a disconnected catalog item.
+8. The Red Hat × Intel AI Strategy umbrella plus the Governed Agentic AI,
+   Sovereign AI, and Virtualization + AI track entries are complete as signed
+   immutable experiences connected to their technical journeys. Keep future
+   sales entries connected to an existing evidence contract and lab path.
 9. VEF and Launchpad ownership boundaries are now explicit. Publish the
    canonical VEF claim schema, pin Launchpad adapter conformance, and source
    every benchmark assumption before enabling value claims in sales telemetry

@@ -37,6 +37,16 @@ certified seats and grants no provisioning, promotion, or publication authority.
   release, model invocation, or autonomous action, then hands the audience into
   Sovereign AI 101. It is not a numbered lab or a certification result.
 
+### Virtualization + AI — Modernize Without Waiting
+
+- Source: `80a96cea03ebb98ffdc2e28d818b1145d3d5ed65`
+- Presentation: `ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1a976ffcaa557ed8b4f2c3ee5f7c2c0b8a6d6a495c88c8ecf0a54e85f4d550c2`
+- Proof dependency: `ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07`
+- State: signed Virtualization + AI track sales entry. It compares complete
+  rehearsal evidence, a known workload-identity mismatch, and missing placement
+  without claiming a live VM, Intel placement, model invocation, migration, or
+  certification, then hands the audience into Virtualization + AI 101.
+
 ## Agentic AI
 
 ### Agentic AI 501 — Scale and Certify Agentic Systems
