@@ -441,8 +441,12 @@ true:
    sales entries connected to an existing evidence contract and lab path.
 9. VEF and Launchpad ownership boundaries are explicit, the canonical VEF
    claim schema is published, and Launchpad adapter conformance is pinned.
-   Continue to source every benchmark assumption before enabling its value
-   claim in sales telemetry or talk tracks.
+   The [sales-entry value-claim audit](sales-value-claim-audit.md) found no
+   enabled numerical value claim in the four immutable entries. Continue to
+   source every future benchmark assumption before enabling its value claim in
+   sales telemetry or talk tracks. The next sales-entry build is AI on Intel
+   Xeon, which remains a portfolio gap rather than an inferred extension of the
+   umbrella strategy experience.
 
 This sequence establishes the factory contract once, then reuses it without
 turning every new repository into a custom Launchpad onboarding exercise.
