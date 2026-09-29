@@ -17,6 +17,16 @@ certified seats and grants no provisioning, promotion, or publication authority.
   Sovereign, or Virtualization + AI. It is not a numbered lab or a certification
   result.
 
+### Governed Agentic AI — Earn Trust Before Authority
+
+- Source: `c1365429d57ce128cf9ecfa3b231508698d09e4d`
+- Presentation: `ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:4eb250e4e7c87fb7280dc9a3bcf59b94cb93542f8d826ab15672d392a8641ebb`
+- Proof dependency: `ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223`
+- State: signed Agentic track sales entry. The qualifier is synthetic,
+  source-labeled `REHEARSAL`, execution-disabled, and hands the audience into
+  Agentic AI 401 before deeper 501 and 601 journeys. It is not a numbered lab or
+  a certification result.
+
 ## Agentic AI
 
 ### Agentic AI 501 — Scale and Certify Agentic Systems
