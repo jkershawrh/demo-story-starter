@@ -27,6 +27,16 @@ certified seats and grants no provisioning, promotion, or publication authority.
   Agentic AI 401 before deeper 501 and 601 journeys. It is not a numbered lab or
   a certification result.
 
+### Sovereign AI — Control What You Can Prove
+
+- Source: `41f3bcb7c733f3b537beefeb24aace2f79ec01c5`
+- Presentation: `ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:f1c3d7fc716d3650c6cc1fad2f046e907834c4683369708addf36c8a92fd54a6`
+- Proof dependency: `ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb`
+- State: signed Sovereign track sales entry. It demonstrates a synthetic,
+  source-labeled trust-chain qualification without claiming live TDX, key
+  release, model invocation, or autonomous action, then hands the audience into
+  Sovereign AI 101. It is not a numbered lab or a certification result.
+
 ## Agentic AI
 
 ### Agentic AI 501 — Scale and Certify Agentic Systems
