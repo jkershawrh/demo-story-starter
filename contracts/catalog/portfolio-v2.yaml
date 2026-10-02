@@ -56,13 +56,33 @@ items:
     specialty_family: null
     branches_from: null
     prerequisites: []
-    recommended_next_items: [operate-agentic-blueprint]
+    recommended_next_items: [agentic-ai-101]
     launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
     artifacts:
       presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:4eb250e4e7c87fb7280dc9a3bcf59b94cb93542f8d826ab15672d392a8641ebb
       workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
     readiness: *signed_entry
     notes: Non-orderable track entry; qualifier remains rehearsal and execution-disabled.
+
+  - id: agentic-ai-101
+    display_name: Agentic AI 101 — Understand Agentic Workflows
+    repository: https://github.com/jkershawrh/agentic-ai-101
+    source_revision: 79998ff66d5d0e2a18f001f0e096badda06f0671
+    track: agentic_ai
+    solution_family: agentic_ai
+    learning_level: "101"
+    experience_type: hands_on_lab
+    journey_role: core
+    specialty_family: null
+    branches_from: governed-agentic-ai-sales
+    prerequisites: []
+    recommended_next_items: [intel-xeon6-agent-201]
+    launchpad: {catalog_item_id: agentic-ai-101, lifecycle: draft, certified_seats: 0}
+    artifacts:
+      presentation: ghcr.io/jkershawrh/agentic-ai-101-presentation@sha256:311b0ee016af01c76f8339ccc14006060d4e9d1fb5feab856c0c15aefa426d0f
+      workload: ghcr.io/jkershawrh/agentic-ai-101-rehearsal@sha256:7839278c27a1960f425e37dbe3a8c4479d61c866727207976446120686bf3e63
+    readiness: {source_bound: true, signed: true, sbom: true, runtime_secret_contract: true, resource_estimate: true, one_seat: false, five_seat: false, reclaim: false}
+    notes: Immutable artifacts and direct Flightpath qualification are green; Launchpad one-seat ordering, participant journey, and lifecycle reclaim remain pending.
 
   - id: sovereign-ai-sales
     display_name: Sovereign AI — Control What You Can Prove
