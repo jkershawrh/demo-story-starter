@@ -1,6 +1,6 @@
 # Catalog portfolio readiness
 
-Generated from `contracts/catalog/portfolio-v2.yaml` on 2026-09-28. This is factory evidence, not Launchpad certification or promotion authority. A `—` is an applicable open gate; `n/a` means the gate does not apply to that experience type.
+Generated from `contracts/catalog/portfolio-v2.yaml` on 2026-10-02. This is factory evidence, not Launchpad certification or promotion authority. A `—` is an applicable open gate; `n/a` means the gate does not apply to that experience type.
 
 | Experience | Track | Level | Lifecycle | Source | Signed | SBOM | Secret contract | Resources | 1 seat | 5 seat | Reclaim |
 |---|---|---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|

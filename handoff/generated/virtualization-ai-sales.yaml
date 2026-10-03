@@ -16,9 +16,9 @@ authority:
   may_publish: false
 source:
   repository: https://github.com/jkershawrh/virtualization-ai-sales
-  revision: 80a96cea03ebb98ffdc2e28d818b1145d3d5ed65
+  revision: b5f1274436769030abdb1c8c4312af9ce139dd17
 artifacts:
-  presentation: ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1a976ffcaa557ed8b4f2c3ee5f7c2c0b8a6d6a495c88c8ecf0a54e85f4d550c2
+  presentation: ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1d5d784cf1683bcc74d3bcdcf44836c1da2faa92c9cbb4fafe19c54ff3aca8d4
   workload: ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07
 journey:
   prerequisites: []

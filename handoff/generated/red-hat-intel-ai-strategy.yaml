@@ -16,9 +16,9 @@ authority:
   may_publish: false
 source:
   repository: https://github.com/jkershawrh/red-hat-intel-ai-strategy
-  revision: 05f2a64f988932ea3400aa0229c14ff119796279
+  revision: a8017675f34a6d1d06bdda5d6493a30f878f85a6
 artifacts:
-  presentation: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:09c2f7a226938ff6e085a2b92d6ad88048be95d06a1ad2f9b3c1b15fd1c48732
+  presentation: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:158695afa247c8c0df58c94ed7bc82ed40cbb6c9bf138e048cb676f23b961218
   workload: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-proof-service@sha256:795cfca4d14bcd5b69dd41247230f3969fa7030ca3b9730fc7036ec0c1e86dde
 journey:
   prerequisites: []

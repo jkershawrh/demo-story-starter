@@ -16,9 +16,9 @@ authority:
   may_publish: false
 source:
   repository: https://github.com/jkershawrh/governed-agentic-ai-sales
-  revision: c1365429d57ce128cf9ecfa3b231508698d09e4d
+  revision: a4813e2931900c115b6bd3876e6a1f2edfae4582
 artifacts:
-  presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:4eb250e4e7c87fb7280dc9a3bcf59b94cb93542f8d826ab15672d392a8641ebb
+  presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:266e5d0bfffb68d78d202070c3db94dcb327bc79fb7f2543be87ceaed30d8356
   workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
 journey:
   prerequisites: []

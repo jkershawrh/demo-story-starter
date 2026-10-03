@@ -16,9 +16,9 @@ authority:
   may_publish: false
 source:
   repository: https://github.com/jkershawrh/sovereign-ai-sales
-  revision: 41f3bcb7c733f3b537beefeb24aace2f79ec01c5
+  revision: b23592052e38c9de8f7cbd63aa2f75a57c0b0d7c
 artifacts:
-  presentation: ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:f1c3d7fc716d3650c6cc1fad2f046e907834c4683369708addf36c8a92fd54a6
+  presentation: ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:6fd78a5f584480d4e141b9c9a95638c11311c528fb5465e04c64e8fcf5967f65
   workload: ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb
 journey:
   prerequisites: []

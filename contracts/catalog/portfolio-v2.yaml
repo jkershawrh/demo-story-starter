@@ -1,5 +1,5 @@
 schema_version: demo-story.redhat-intel.com/catalog-portfolio/v2
-verified_at: "2026-09-28"
+verified_at: "2026-10-02"
 authority:
   owner: demo-story-starter factory
   grants_launchpad_authority: false
@@ -7,7 +7,7 @@ items:
   - id: red-hat-intel-ai-strategy
     display_name: Red Hat × Intel AI Strategy — Choose the Path to Production
     repository: https://github.com/jkershawrh/red-hat-intel-ai-strategy
-    source_revision: 05f2a64f988932ea3400aa0229c14ff119796279
+    source_revision: a8017675f34a6d1d06bdda5d6493a30f878f85a6
     track: shared_foundation
     solution_family: platform_foundations
     learning_level: null
@@ -19,7 +19,7 @@ items:
     recommended_next_items: [ai-on-intel-xeon, governed-agentic-ai-sales, sovereign-ai-sales, virtualization-ai-sales]
     launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
     artifacts:
-      presentation: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:09c2f7a226938ff6e085a2b92d6ad88048be95d06a1ad2f9b3c1b15fd1c48732
+      presentation: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-web@sha256:158695afa247c8c0df58c94ed7bc82ed40cbb6c9bf138e048cb676f23b961218
       workload: ghcr.io/jkershawrh/red-hat-intel-ai-strategy-proof-service@sha256:795cfca4d14bcd5b69dd41247230f3969fa7030ca3b9730fc7036ec0c1e86dde
     readiness: &signed_entry {source_bound: true, signed: true, sbom: true, runtime_secret_contract: true, resource_estimate: false, one_seat: false, five_seat: false, reclaim: false}
     notes: Non-orderable umbrella entry; never represented as a certified lab.
@@ -27,7 +27,7 @@ items:
   - id: ai-on-intel-xeon
     display_name: AI on Intel Xeon — Start Where the Workload Fits
     repository: https://github.com/jkershawrh/intel-xeon-ai-sales
-    source_revision: 96804fb7717f3ef65c64501437b7cc57752251bc
+    source_revision: 0c4c404e4ba5d0b989685b922b54e511c9347336
     track: shared_foundation
     solution_family: inference
     learning_level: null
@@ -39,7 +39,7 @@ items:
     recommended_next_items: [intel-llm-cpu-serving, intel-xeon6-agent-201]
     launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
     artifacts:
-      presentation: ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:86ac164c2fdb0b6d13f64f897c2b47dfb7b13a5f4821cc3d847d481fd6233ba5
+      presentation: ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:674e0653dd8fd27bf3f100946abc80dd229add5d7d4faf81e0a6de482fddb5e5
       workload: ghcr.io/jkershawrh/intel-xeon-ai-sales-proof-service@sha256:50f9f80d6a430ba906438477288e5edab92ee896f0763f487381cf5fd5b66213
     readiness: *signed_entry
     notes: Current-session inference proof; hardware identity remains OBSERVED, DECLARED, or UNVERIFIED.
@@ -47,7 +47,7 @@ items:
   - id: governed-agentic-ai-sales
     display_name: Governed Agentic AI — Earn Trust Before Authority
     repository: https://github.com/jkershawrh/governed-agentic-ai-sales
-    source_revision: c1365429d57ce128cf9ecfa3b231508698d09e4d
+    source_revision: a4813e2931900c115b6bd3876e6a1f2edfae4582
     track: agentic_ai
     solution_family: agentic_ai
     learning_level: null
@@ -59,7 +59,7 @@ items:
     recommended_next_items: [agentic-ai-101]
     launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
     artifacts:
-      presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:4eb250e4e7c87fb7280dc9a3bcf59b94cb93542f8d826ab15672d392a8641ebb
+      presentation: ghcr.io/jkershawrh/governed-agentic-ai-sales-web@sha256:266e5d0bfffb68d78d202070c3db94dcb327bc79fb7f2543be87ceaed30d8356
       workload: ghcr.io/jkershawrh/agentic-ai-601-qualifier@sha256:d2979d7cb90104c9b76d083502659c5cdfcc1868bf8d957d47bc38618b490223
     readiness: *signed_entry
     notes: Non-orderable track entry; qualifier remains rehearsal and execution-disabled.
@@ -87,7 +87,7 @@ items:
   - id: sovereign-ai-sales
     display_name: Sovereign AI — Control What You Can Prove
     repository: https://github.com/jkershawrh/sovereign-ai-sales
-    source_revision: 41f3bcb7c733f3b537beefeb24aace2f79ec01c5
+    source_revision: b23592052e38c9de8f7cbd63aa2f75a57c0b0d7c
     track: sovereign_ai
     solution_family: operations_reliability
     learning_level: null
@@ -99,7 +99,7 @@ items:
     recommended_next_items: [sovereign-ai-101]
     launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
     artifacts:
-      presentation: ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:f1c3d7fc716d3650c6cc1fad2f046e907834c4683369708addf36c8a92fd54a6
+      presentation: ghcr.io/jkershawrh/sovereign-ai-sales-web@sha256:6fd78a5f584480d4e141b9c9a95638c11311c528fb5465e04c64e8fcf5967f65
       workload: ghcr.io/jkershawrh/sovereign-ai-301-qualifier@sha256:bb75ed470221e0e3b3490f82f980418d4d4890dded52db1d1fce26f58ef52edb
     readiness: *signed_entry
     notes: Non-orderable track entry; no live TDX or key-release claim.
@@ -107,7 +107,7 @@ items:
   - id: virtualization-ai-sales
     display_name: Virtualization + AI — Modernize Without Waiting
     repository: https://github.com/jkershawrh/virtualization-ai-sales
-    source_revision: 80a96cea03ebb98ffdc2e28d818b1145d3d5ed65
+    source_revision: b5f1274436769030abdb1c8c4312af9ce139dd17
     track: virtualization_ai
     solution_family: platform_foundations
     learning_level: null
@@ -119,7 +119,7 @@ items:
     recommended_next_items: [virtualization-ai-101]
     launchpad: {catalog_item_id: null, lifecycle: intake_ready, certified_seats: 0}
     artifacts:
-      presentation: ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1a976ffcaa557ed8b4f2c3ee5f7c2c0b8a6d6a495c88c8ecf0a54e85f4d550c2
+      presentation: ghcr.io/jkershawrh/virtualization-ai-sales-web@sha256:1d5d784cf1683bcc74d3bcdcf44836c1da2faa92c9cbb4fafe19c54ff3aca8d4
       workload: ghcr.io/jkershawrh/virtualization-ai-301-adapter@sha256:6da66231992bd9db8a31cdc08b3912b7d6c797e1ed42a064c06eea686d579d07
     readiness: *signed_entry
     notes: Non-orderable track entry; no live VM, migration, or Intel-placement claim.

@@ -16,9 +16,9 @@ authority:
   may_publish: false
 source:
   repository: https://github.com/jkershawrh/intel-xeon-ai-sales
-  revision: 96804fb7717f3ef65c64501437b7cc57752251bc
+  revision: 0c4c404e4ba5d0b989685b922b54e511c9347336
 artifacts:
-  presentation: ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:86ac164c2fdb0b6d13f64f897c2b47dfb7b13a5f4821cc3d847d481fd6233ba5
+  presentation: ghcr.io/jkershawrh/intel-xeon-ai-sales-web@sha256:674e0653dd8fd27bf3f100946abc80dd229add5d7d4faf81e0a6de482fddb5e5
   workload: ghcr.io/jkershawrh/intel-xeon-ai-sales-proof-service@sha256:50f9f80d6a430ba906438477288e5edab92ee896f0763f487381cf5fd5b66213
 journey:
   prerequisites: []
