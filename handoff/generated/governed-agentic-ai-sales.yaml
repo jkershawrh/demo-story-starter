@@ -23,7 +23,7 @@ artifacts:
 journey:
   prerequisites: []
   recommended_next_items:
-    - operate-agentic-blueprint
+    - agentic-ai-101
   branches_from: null
 proposed_surface: start_here
 launchpad_request: review_non_orderable_start_here_surface

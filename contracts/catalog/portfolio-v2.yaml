@@ -67,7 +67,7 @@ items:
   - id: agentic-ai-101
     display_name: Agentic AI 101 — Understand Agentic Workflows
     repository: https://github.com/jkershawrh/agentic-ai-101
-    source_revision: 79998ff66d5d0e2a18f001f0e096badda06f0671
+    source_revision: 0458cc6ed797e2d54ef02d177224804beffb3638
     track: agentic_ai
     solution_family: agentic_ai
     learning_level: "101"
@@ -77,12 +77,12 @@ items:
     branches_from: governed-agentic-ai-sales
     prerequisites: []
     recommended_next_items: [intel-xeon6-agent-201]
-    launchpad: {catalog_item_id: agentic-ai-101, lifecycle: draft, certified_seats: 0}
+    launchpad: {catalog_item_id: agentic-ai-101, lifecycle: launchpad_active, certified_seats: 1}
     artifacts:
       presentation: ghcr.io/jkershawrh/agentic-ai-101-presentation@sha256:311b0ee016af01c76f8339ccc14006060d4e9d1fb5feab856c0c15aefa426d0f
       workload: ghcr.io/jkershawrh/agentic-ai-101-rehearsal@sha256:7839278c27a1960f425e37dbe3a8c4479d61c866727207976446120686bf3e63
-    readiness: {source_bound: true, signed: true, sbom: true, runtime_secret_contract: true, resource_estimate: true, one_seat: false, five_seat: false, reclaim: false}
-    notes: Immutable artifacts and direct Flightpath qualification are green; Launchpad one-seat ordering, participant journey, and lifecycle reclaim remain pending.
+    readiness: {source_bound: true, signed: true, sbom: true, runtime_secret_contract: true, resource_estimate: true, one_seat: true, five_seat: false, reclaim: true}
+    notes: Flightpath internal and public-code one-seat ordering, participant journey, isolation, and zero-residue reclaim are certified; scale beyond one seat remains gated.
 
   - id: sovereign-ai-sales
     display_name: Sovereign AI — Control What You Can Prove

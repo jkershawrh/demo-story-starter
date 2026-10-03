@@ -7,6 +7,7 @@ Generated from `contracts/catalog/portfolio-v2.yaml` on 2026-09-28. This is fact
 | Red Hat × Intel AI Strategy — Choose the Path to Production | Shared foundation | Entry | intake_ready | ✓ | ✓ | ✓ | ✓ | n/a | n/a | n/a | n/a |
 | AI on Intel Xeon — Start Where the Workload Fits | Shared foundation | Entry | intake_ready | ✓ | ✓ | ✓ | ✓ | n/a | n/a | n/a | n/a |
 | Governed Agentic AI — Earn Trust Before Authority | Agentic AI | Entry | intake_ready | ✓ | ✓ | ✓ | ✓ | n/a | n/a | n/a | n/a |
+| Agentic AI 101 — Understand Agentic Workflows | Agentic AI | 101 | launchpad_active | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | ✓ |
 | Sovereign AI — Control What You Can Prove | Sovereign AI | Entry | intake_ready | ✓ | ✓ | ✓ | ✓ | n/a | n/a | n/a | n/a |
 | Virtualization + AI — Modernize Without Waiting | Virtualization + AI | Entry | intake_ready | ✓ | ✓ | ✓ | ✓ | n/a | n/a | n/a | n/a |
 | Intel AI 101 — CPU Inference Serving on Xeon | Shared foundation | 101 | launchpad_active | — | — | — | ✓ | ✓ | ✓ | ✓ | ✓ |
